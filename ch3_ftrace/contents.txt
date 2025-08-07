@@ -1,0 +1,48 @@
+
+## Trace Info
+* results:
+  cat-414     [000] .....  8169.187404: show_interrupts+0x4/0x370 <-seq_read_iter+0x10e/0x4a0
+* Process Name:  cat
+* PID:  414
+* CPU Number:  000
+* Context Info:  .....
+* Time Stamp:  8169.187404
+* Events:  show_interrupts
+
+## Events
+(1) sched_switch
+* results:
+  kworker/1:2-228     [001] d..2.  8169.169734: sched_switch: prev_comm=kworker/1:2 prev_pid=228 prev_prio=120 prev_state=I ==> next_comm=swapper/1 next_pid=0 next_prio=120
+* Process Name:  kworker/1:2
+* PID:  228
+* CPU Number:  001
+* Context Info:  d..2.
+* Time Stamp:  8169.169734
+* Events: sched_switch
+  - Prev Process Name:  kworker/1:2
+  - Prev PID:  228
+  - Prev Process Priority:  120
+  - Prev Process State:  I (Idle)
+  - Next Process Name:  swapper/1
+  - Next PID:  0
+  - Next Process Priority:  120
+
+(2) irq_handler_entry/irq_handler_exit
+* results:
+  sh-145     [003] d.h..  8169.169869: irq_handler_entry: irq=4 name=ttyS0
+  sh-145     [003] d.h..  8169.169914: irq_handler_exit: irq=4 ret=handled
+* Process Name:  sh
+* PID:  145
+* CPU Number:  003
+* Context Info:  d.h..
+* Time Stamp:  8169.169869 ~ 8169.169914
+* Events: irq_handler_entry ~ irq_handler_exit
+=> When running sh-145, IRQ(4, name=ttyS0) happened.
+=> CPU 003 interrupt line was disabled (d).
+=> CPU used interrupt context (h)
+=> Interrupt handler finished at 8169.169914
+
+## Trace Events
+events: sched_switch      => kernel: trace_sched_switch()/TRACE_EVENT(sched_switch, ...) [include/trace/events/sched.h]
+events: irq_handler_entry => kernel: trace_irq_handler_entry()/TRACE_EVENT(irq_handler_entry, ...) [include/trace/events/irq.h]
+

@@ -1,0 +1,69 @@
+              sh-145     [003] d..2.  8168.497676: sched_switch: prev_comm=sh prev_pid=145 prev_prio=120 prev_state=S ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0       [000] d..2.  8168.969920: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/0:0 next_pid=8 next_prio=120
+          <idle>-0       [001] d..2.  8168.970849: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kcompactd0 next_pid=44 next_prio=120
+      kcompactd0-44      [001] d..2.  8168.971178: sched_switch: prev_comm=kcompactd0 prev_pid=44 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+     kworker/0:0-8       [000] d..2.  8168.971785: sched_switch: prev_comm=kworker/0:0 prev_pid=8 prev_prio=120 prev_state=I ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [003] d..2.  8168.971858: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/3:2 next_pid=307 next_prio=120
+     kworker/3:2-307     [003] d..2.  8168.972116: sched_switch: prev_comm=kworker/3:2 prev_pid=307 prev_prio=120 prev_state=I ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0       [001] d..2.  8169.124454: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/1:2 next_pid=228 next_prio=120
+     kworker/1:2-228     [001] d..2.  8169.124910: sched_switch: prev_comm=kworker/1:2 prev_pid=228 prev_prio=120 prev_state=I ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [003] d.h1.  8169.169333: irq_handler_entry: irq=4 name=ttyS0
+          <idle>-0       [003] d.h1.  8169.169420: irq_handler_exit: irq=4 ret=handled
+          <idle>-0       [001] d..2.  8169.169576: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/u16:2 next_pid=43 next_prio=120
+   kworker/u16:2-43      [001] d..2.  8169.169674: sched_switch: prev_comm=kworker/u16:2 prev_pid=43 prev_prio=120 prev_state=I ==> next_comm=kworker/1:2 next_pid=228 next_prio=120
+     kworker/1:2-228     [001] d..2.  8169.169734: sched_switch: prev_comm=kworker/1:2 prev_pid=228 prev_prio=120 prev_state=I ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [003] d..2.  8169.169769: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sh next_pid=145 next_prio=120
+              sh-145     [003] d.h..  8169.169869: irq_handler_entry: irq=4 name=ttyS0
+              sh-145     [003] d.h..  8169.169914: irq_handler_exit: irq=4 ret=handled
+              sh-145     [003] d.h..  8169.169921: irq_handler_entry: irq=4 name=ttyS0
+              sh-145     [003] d.h..  8169.169922: irq_handler_exit: irq=4 ret=unhandled
+          <idle>-0       [000] d..2.  8169.171007: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sh next_pid=414 next_prio=120
+              sh-145     [003] d..2.  8169.171421: sched_switch: prev_comm=sh prev_pid=145 prev_prio=120 prev_state=S ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0       [003] d..2.  8169.173269: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [003] d..2.  8169.173307: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0       [003] d..2.  8169.177165: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [003] d..2.  8169.177195: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0       [003] d..2.  8169.181151: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [003] d..2.  8169.181179: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0       [003] d..2.  8169.182128: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [003] d..2.  8169.182144: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0       [003] d..2.  8169.186169: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [003] d..2.  8169.186193: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/3 next_pid=0 next_prio=120
+             cat-414     [000] .....  8169.187404: show_interrupts+0x4/0x370 <-seq_read_iter+0x10e/0x4a0
+             cat-414     [000] .....  8169.187774: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => show_interrupts+0x9/0x370
+ => seq_read_iter+0x10e/0x4a0
+ => proc_reg_read_iter+0x50/0x90
+ => copy_splice_read+0x18c/0x340
+ => splice_direct_to_actor+0xba/0x250
+ => do_splice_direct+0x77/0xc0
+ => do_sendfile+0x353/0x410
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+             cat-414     [000] .....  8169.188203: show_interrupts+0x4/0x370 <-seq_read_iter+0x2b4/0x4a0
+             cat-414     [000] .....  8169.188216: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => show_interrupts+0x9/0x370
+ => seq_read_iter+0x2b4/0x4a0
+ => proc_reg_read_iter+0x50/0x90
+ => copy_splice_read+0x18c/0x340
+ => splice_direct_to_actor+0xba/0x250
+ => do_splice_direct+0x77/0xc0
+ => do_sendfile+0x353/0x410
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+             cat-414     [000] .....  8169.188225: show_interrupts+0x4/0x370 <-seq_read_iter+0x2b4/0x4a0
+             cat-414     [000] .....  8169.188230: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => show_interrupts+0x9/0x370
+ => seq_read_iter+0x2b4/0x4a0
+ => proc_reg_read_iter+0x50/0x90
+ => copy_splice_read+0x18c/0x340
+ => splice_direct_to_actor+0xba/0x250
+ => do_splice_direct+0x77/0xc0
+ => do_sendfile+0x353/0x410
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+             cat-414     [000] .....  8169.188232: show_interrupts+0x4/0x370 <-seq_read_iter+0x2b4/0x4a0
+             cat-414     [000] .....  8169.188236: <stack trace>
