@@ -1,5 +1,19 @@
 
 ############## function definitions ##############
+function print_usage(){
+    echo "usage:"
+    echo "  - tracing on:"
+    echo "       $0 on <functions>"
+    echo "  - tracing off:"
+    echo "       $0 off"
+    echo "  - tracing off & copy data:"
+    echo "       $0 g"
+    echo " "
+    echo "functions:"
+    echo "  - show_interrupts"
+    echo " "
+}
+
 function config_event(){
     if [ "$FUNCTIONS" =  "show_interrupts" ]; then
         echo 1 > /sys/kernel/debug/tracing/events/sched/sched_switch/enable
@@ -17,7 +31,7 @@ FUNCTIONS=$2
 if [ "$COMMAND" = "on" ]; then
     ## check - args
     if [ $# -lt 2 ]; then
-        echo "need more args"
+        print_usage
         exit 1
     fi
 
@@ -71,16 +85,7 @@ elif [ "$COMMAND" = "off" ]; then
     echo "tracing off"
 
 else
-    echo "usage:"
-    echo "  - tracing on:"
-    echo "       $0 on <functions>"
-    echo "  - tracing off:"
-    echo "       $0 off"
-    echo "  - tracing off & copy data:"
-    echo "       $0 g"
-    echo " "
-    echo "functions:"
-    echo "  - show_interrupts"
-    echo " "
+    print_usage
+    exit 1
 fi
 
