@@ -118,3 +118,116 @@
  => do_syscall_64+0xbf/0x1d0
  => entry_SYSCALL_64_after_hwframe+0x77/0x7f
 
+-----------------------------------------------------------------------------------------------------------------------------------
+
+## Test Environments
+./ftrace.sh set __x64_sys_execve
+./ftrace.sh add __x64_sys_clone
+./ftrace.sh add kernel_clone
+./ftrace.sh add copy_process
+./ftrace.sh add do_exit
+./ftrace.sh on
+
+## 1. whoami command
+              sh-148     [003] ..... 24791.696390: __x64_sys_clone+0x4/0x30 <-do_syscall_64+0xb2/0x1d0
+              sh-148     [003] ..... 24791.696433: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => __x64_sys_clone+0x9/0x30
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+              sh-148     [003] ..... 24791.696438: kernel_clone+0x4/0x3b0 <-__do_sys_clone+0x66/0x90
+              sh-148     [003] ..... 24791.696445: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => kernel_clone+0x9/0x3b0
+ => __do_sys_clone+0x66/0x90
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+              sh-148     [003] ..... 24791.696447: copy_process+0x4/0x1a60 <-kernel_clone+0x9e/0x3b0
+              sh-148     [003] ..... 24791.696452: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => copy_process+0x9/0x1a60
+ => kernel_clone+0x9e/0x3b0
+ => __do_sys_clone+0x66/0x90
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+              sh-148     [003] ..... 24791.697074: sched_process_fork: comm=sh pid=148 child_comm=sh child_pid=754
+          <idle>-0       [000] d..2. 24791.697186: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sh next_pid=754 next_prio=120
+              sh-148     [003] d..2. 24791.697387: sched_switch: prev_comm=sh prev_pid=148 prev_prio=120 prev_state=S ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          whoami-754     [000] ..... 24791.698049: __x64_sys_execve+0x4/0x50 <-do_syscall_64+0xb2/0x1d0
+          whoami-754     [000] ..... 24791.698083: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => __x64_sys_execve+0x9/0x50
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+          whoami-754     [000] ..... 24791.699345: sched_process_exec: filename=/usr/bin/whoami pid=754 old_pid=754
+          <idle>-0       [002] dNh2. 24791.699705: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+          <idle>-0       [002] d..2. 24791.699739: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [002] d..2. 24791.699777: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0       [002] dNh2. 24791.703626: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+          <idle>-0       [002] d..2. 24791.703654: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [002] d..2. 24791.703680: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0       [002] dNh2. 24791.707681: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+          <idle>-0       [002] d..2. 24791.707717: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [002] d..2. 24791.707754: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0       [002] dNh2. 24791.708670: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+          <idle>-0       [002] d..2. 24791.708705: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [002] d..2. 24791.708734: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0       [002] dNh2. 24791.712663: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+          <idle>-0       [002] d..2. 24791.712700: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [002] d..2. 24791.712736: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0       [002] dNh2. 24791.716647: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+          <idle>-0       [002] d..2. 24791.716685: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [002] d..2. 24791.716722: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          whoami-754     [000] ..... 24791.719982: do_exit+0x4/0xb20 <-do_group_exit+0x30/0x80
+          whoami-754     [000] ..... 24791.720031: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => do_exit+0x9/0xb20
+ => do_group_exit+0x30/0x80
+ => __x64_sys_exit_group+0x18/0x20
+ => x64_sys_call+0xf6f/0x18a0
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+          whoami-754     [000] ..... 24791.720411: sched_process_exit: comm=whoami pid=754 prio=120
+          whoami-754     [000] d..2. 24791.720539: signal_generate: sig=17 errno=0 code=1 comm=sh pid=148 grp=1 res=0
+          <idle>-0       [003] dNh2. 24791.720693: sched_wakeup: comm=sh pid=148 prio=120 target_cpu=003
+          <idle>-0       [003] d..2. 24791.720754: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sh next_pid=148 next_prio=120
+              sh-148     [003] d..1. 24791.720831: signal_deliver: sig=17 errno=0 code=1 sa_handler=560b95199b1d sa_flags=4000000
+          <idle>-0       [002] dNh2. 24791.720895: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+          whoami-754     [000] d..2. 24791.720911: sched_switch: prev_comm=whoami prev_pid=754 prev_prio=120 prev_state=X ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [002] d..2. 24791.720929: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+* Process Create: kernel_clone (==do_fork)
+  - (__x64_sys_clone -> __do_sys_clone -> kernel_clone -> copy_process)
+* Created Process Info
+  - sh-148     [003] ..... 24791.697074: sched_process_fork: comm=sh pid=148 child_comm=sh child_pid=754
+  - check sched_process_fork
+  - Parent Process:  sh (PID: 148)
+  - Child Process:   sh (PID: 754)
+* Execution Info:
+  - Log: whoami-754     [000] ..... 24791.698049: __x64_sys_execve+0x4/0x50 <-do_syscall_64+0xb2/0x1d0
+         whoami-754     [000] ..... 24791.698083: <stack trace>
+         => [FTRACE TRAMPOLINE]
+         => __x64_sys_execve+0x9/0x50
+         => do_syscall_64+0xb2/0x1d0
+         => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+         whoami-754     [000] ..... 24791.699345: sched_process_exec: filename=/usr/bin/whoami pid=754 old_pid=754
+  - Execution filename:  /usr/bin/whoami
+* Process Exit
+  - Log: whoami-754     [000] ..... 24791.719982: do_exit+0x4/0xb20 <-do_group_exit+0x30/0x80
+         whoami-754     [000] ..... 24791.720031: <stack trace>
+         => [FTRACE TRAMPOLINE]
+         => do_exit+0x9/0xb20
+         => do_group_exit+0x30/0x80
+         => __x64_sys_exit_group+0x18/0x20
+         => x64_sys_call+0xf6f/0x18a0
+         => do_syscall_64+0xb2/0x1d0
+         => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+         whoami-754     [000] ..... 24791.720411: sched_process_exit: comm=whoami pid=754 prio=120
+         whoami-754     [000] d..2. 24791.720539: signal_generate: sig=17 errno=0 code=1 comm=sh pid=148 grp=1 res=0
+         <idle>-0       [003] dNh2. 24791.720693: sched_wakeup: comm=sh pid=148 prio=120 target_cpu=003
+         <idle>-0       [003] d..2. 24791.720754: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sh next_pid=148 next_prio=120
+             sh-148     [003] d..1. 24791.720831: signal_deliver: sig=17 errno=0 code=1 sa_handler=560b95199b1d sa_flags=4000000
+         <idle>-0       [002] dNh2. 24791.720895: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+         whoami-754     [000] d..2. 24791.720911: sched_switch: prev_comm=whoami prev_pid=754 prev_prio=120 prev_state=X ==> next_comm=swapper/0 next_pid=0 next_prio=120
+  - Child Process:  whoami (PID: 754), Generate Signals (17) to Parent Process (PID: 148)
+  - Parent Process: sh (PID 148), Receive Signlas (17) from Chiled Process (PID: 754) (check signal_deliver & sa_handler)
+

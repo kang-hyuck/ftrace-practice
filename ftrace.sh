@@ -21,8 +21,9 @@ function print_usage(){
     echo "  - show_interrupts"
     echo "  - __x64_sys_clone"
     echo "  - do_exit"
-    echo "  - __do_sys_fork"
+    echo "  - kernel_clone"
     echo "  - copy_process"
+    echo "  - __x64_sys_execve"
     echo " "
 }
 
@@ -39,8 +40,15 @@ function config_event(){
         echo 1 > /sys/kernel/debug/tracing/events/sched/sched_wakeup/enable
         echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_fork/enable
         echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_exit/enable
+        echo 1 > /sys/kernel/debug/tracing/events/signal/enable
         sleep 1
         echo "event enabled"
+
+    elif [ "$FUNCTIONS" =  "__x64_sys_execve" ]; then
+        echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_exec/enable
+        echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_free/enable
+        echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_fork/enable
+        echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_exit/enable
     fi
 }
 
