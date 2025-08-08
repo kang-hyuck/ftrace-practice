@@ -1,0 +1,120 @@
+
+## Test Environments
+./ftrace.sh set __x64_sys_clone
+./ftrace.sh add do_exit
+./ftrace.sh add __do_sys_fork
+./ftrace.sh add copy_process
+./ftrace.sh on
+
+## 1. Create Process (__x64_sys_clone)
+          <idle>-0       [000] dNh2.  3716.511513: sched_wakeup: comm=sh pid=148 prio=120 target_cpu=000
+          <idle>-0       [000] d..2.  3716.511560: sched_switch: prev_comm=swapper/0 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sh next_pid=148 next_prio=120
+              sh-148     [000] .....  3716.512003: __x64_sys_clone+0x4/0x30 <-do_syscall_64+0xb2/0x1d0
+              sh-148     [000] .....  3716.512044: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => __x64_sys_clone+0x9/0x30
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+              sh-148     [000] .....  3716.512051: copy_process+0x4/0x1a60 <-kernel_clone+0x9e/0x3b0
+              sh-148     [000] .....  3716.512057: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => copy_process+0x9/0x1a60
+ => kernel_clone+0x9e/0x3b0
+ => __do_sys_clone+0x66/0x90
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+              sh-148     [000] .....  3716.512488: sched_process_fork: comm=sh pid=148 child_comm=sh child_pid=568
+          <idle>-0       [001] d..2.  3716.512589: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sh next_pid=568 next_prio=120
+              sh-148     [000] d..2.  3716.512788: sched_switch: prev_comm=sh prev_pid=148 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [002] dNh2.  3716.513963: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+          <idle>-0       [002] d..2.  3716.513998: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [002] d..2.  3716.514032: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0       [002] dNh2.  3716.517855: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+          <idle>-0       [002] d..2.  3716.517878: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [002] d..2.  3716.517902: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0       [002] dNh2.  3716.521886: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+          <idle>-0       [002] d..2.  3716.521920: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [002] d..2.  3716.521964: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+          <idle>-0       [002] dNh2.  3716.525859: sched_wakeup: comm=rcu_preempt pid=17 prio=120 target_cpu=002
+          <idle>-0       [002] d..2.  3716.525890: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=rcu_preempt next_pid=17 next_prio=120
+     rcu_preempt-17      [002] d..2.  3716.525910: sched_switch: prev_comm=rcu_preempt prev_pid=17 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+           a.out-568     [001] d..2.  3716.526739: sched_switch: prev_comm=a.out prev_pid=568 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+* Shell Name: sh (PID: 148)
+* App Name: a.out (PID: 568)
+* Call Stack:
+ => __x64_sys_clone+0x9/0x30
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+-------------------------------------------------
+ => copy_process+0x9/0x1a60
+ => kernel_clone+0x9e/0x3b0
+ => __do_sys_clone+0x66/0x90
+ => do_syscall_64+0xb2/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+-------------------------------------------------
+* Child Process (created)
+ sh-148     [000] .....  3716.512488: sched_process_fork: comm=sh pid=148 child_comm=sh child_pid=568
+   => check child_pid=568 (a.out)
+
+## 2. Wakeup Process (a.out)
+           a.out-568     [001] d..2.  3716.526739: sched_switch: prev_comm=a.out prev_pid=568 prev_prio=120 prev_state=S ==> next_comm=swapper/1 next_pid=0 next_prio=120
+
+            ...
+
+          <idle>-0       [001] dNh4.  3719.528337: sched_wakeup: comm=a.out pid=568 prio=120 target_cpu=001
+          <idle>-0       [001] d..2.  3719.528712: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=a.out next_pid=568 next_prio=120
+           a.out-568     [001] dN.6.  3719.531168: sched_wakeup: comm=kworker/1:1 pid=404 prio=120 target_cpu=001
+           a.out-568     [001] d..2.  3719.531474: sched_switch: prev_comm=a.out prev_pid=568 prev_prio=120 prev_state=R+ ==> next_comm=kworker/1:1 next_pid=404 next_prio=120
+     kworker/1:1-404     [001] d..2.  3719.534607: sched_switch: prev_comm=kworker/1:1 prev_pid=404 prev_prio=120 prev_state=I ==> next_comm=swapper/1 next_pid=0 next_prio=120
+          <idle>-0       [002] d..2.  3719.536755: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=a.out next_pid=568 next_prio=120
+           a.out-568     [002] d..2.  3719.536988: sched_switch: prev_comm=a.out prev_pid=568 prev_prio=120 prev_state=S ==> next_comm=swapper/2 next_pid=0 next_prio=120
+
+            ...
+
+          <idle>-0       [002] dNh4.  3722.537327: sched_wakeup: comm=a.out pid=568 prio=120 target_cpu=002
+          <idle>-0       [002] d..2.  3722.537405: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=a.out next_pid=568 next_prio=120
+           a.out-568     [002] d..6.  3722.537582: sched_wakeup: comm=kworker/2:2 pid=260 prio=120 target_cpu=002
+           a.out-568     [002] d..2.  3722.537706: sched_switch: prev_comm=a.out prev_pid=568 prev_prio=120 prev_state=S ==> next_comm=kworker/2:2 next_pid=260 next_prio=120
+
+            ...
+
+          <idle>-0       [002] dNh4.  3725.539777: sched_wakeup: comm=a.out pid=568 prio=120 target_cpu=002
+          <idle>-0       [002] d..2.  3725.540099: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=a.out next_pid=568 next_prio=120
+           a.out-568     [002] d..6.  3725.540467: sched_wakeup: comm=kworker/2:2 pid=260 prio=120 target_cpu=002
+           a.out-568     [002] d..2.  3725.540838: sched_switch: prev_comm=a.out prev_pid=568 prev_prio=120 prev_state=S ==> next_comm=kworker/2:2 next_pid=260 next_prio=120
+* Wakeup Cycle: 3 seconds (time stamp: 3719.xx -> 3722.xx -> 3725.xx)
+
+## 3. Exit Process (a.out)
+          <idle>-0       [001] dNh2.  3730.246818: sched_wakeup: comm=a.out pid=568 prio=120 target_cpu=001
+          <idle>-0       [001] d..2.  3730.246862: sched_switch: prev_comm=swapper/1 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=a.out next_pid=568 next_prio=120
+           a.out-568     [001] .....  3730.246892: do_exit+0x4/0xb20 <-do_group_exit+0x30/0x80
+           a.out-568     [001] .....  3730.246938: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => do_exit+0x9/0xb20
+ => do_group_exit+0x30/0x80
+ => get_signal+0x918/0x940
+ => arch_do_signal_or_restart+0x2e/0x220
+ => syscall_exit_to_user_mode+0xd0/0x160
+ => do_syscall_64+0xbf/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+          <idle>-0       [002] dNh2.  3730.247107: sched_wakeup: comm=kworker/u16:2 pid=43 prio=120 target_cpu=002
+              sh-548     [000] d..2.  3730.247153: sched_switch: prev_comm=sh prev_pid=548 prev_prio=120 prev_state=S ==> next_comm=swapper/0 next_pid=0 next_prio=120
+          <idle>-0       [002] d..2.  3730.247208: sched_switch: prev_comm=swapper/2 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=kworker/u16:2 next_pid=43 next_prio=120
+          <idle>-0       [003] dNh2.  3730.247273: sched_wakeup: comm=sshd-session pid=547 prio=120 target_cpu=003
+          <idle>-0       [003] d..2.  3730.247290: sched_switch: prev_comm=swapper/3 prev_pid=0 prev_prio=120 prev_state=R ==> next_comm=sshd-session next_pid=547 next_prio=120
+   kworker/u16:2-43      [002] d..2.  3730.247323: sched_switch: prev_comm=kworker/u16:2 prev_pid=43 prev_prio=120 prev_state=I ==> next_comm=swapper/2 next_pid=0 next_prio=120
+           a.out-568     [001] .....  3730.247364: sched_process_exit: comm=a.out pid=568 prio=120
+    sshd-session-547     [003] d..2.  3730.247590: sched_switch: prev_comm=sshd-session prev_pid=547 prev_prio=120 prev_state=S ==> next_comm=swapper/3 next_pid=0 next_prio=120
+          <idle>-0       [000] dNH2.  3730.247678: sched_wakeup: comm=sh pid=148 prio=120 target_cpu=000
+           a.out-568     [001] d..2.  3730.247731: sched_switch: prev_comm=a.out prev_pid=568 prev_prio=120 prev_state=Z ==> next_comm=swapper/1 next_pid=0 next_prio=120
+* sched_process_exit: exit process a.out (PID: 568)
+* prev_state=Z (Zombie)
+* call stack
+ => do_exit+0x9/0xb20
+ => do_group_exit+0x30/0x80
+ => get_signal+0x918/0x940
+ => arch_do_signal_or_restart+0x2e/0x220
+ => syscall_exit_to_user_mode+0xd0/0x160
+ => do_syscall_64+0xbf/0x1d0
+ => entry_SYSCALL_64_after_hwframe+0x77/0x7f
+
