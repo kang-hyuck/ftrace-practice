@@ -24,6 +24,10 @@ function print_usage(){
     echo "  - kernel_clone"
     echo "  - copy_process"
     echo "  - __x64_sys_execve"
+    echo "  - serial8250_interrupt"
+    echo "  - serial8250_rx_chars"
+    echo "  - serial8250_tx_chars"
+    echo "  - serial8250_handle_irq"
     echo " "
 }
 
@@ -49,6 +53,10 @@ function config_event(){
         echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_free/enable
         echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_fork/enable
         echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_exit/enable
+
+    elif [ "$FUNCTIONS" =  "serial8250_interrupt" ]; then
+        echo 1 > /sys/kernel/debug/tracing/events/irq/irq_handler_entry/enable
+        echo 1 > /sys/kernel/debug/tracing/events/irq/irq_handler_exit/enable
     fi
 }
 
