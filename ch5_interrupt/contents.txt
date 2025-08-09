@@ -1,0 +1,114 @@
+
+## Test Environments
+./ftrace.sh set serial8250_interrupt
+./ftrace.sh add serial8250_rx_chars
+./ftrace.sh add serial8250_tx_chars
+./ftrace.sh add serial8250_handle_irq
+./ftrace.sh on
+
+## 1. Interrupts
+          <idle>-0       [003] d.h1.  1999.597913: irq_handler_entry: irq=4 name=ttyS0
+          <idle>-0       [003] d.h1.  1999.597924: serial8250_interrupt+0x4/0xa0 <-__handle_irq_event_percpu+0x6f/0x1d0
+          <idle>-0       [003] d.h1.  1999.597971: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => serial8250_interrupt+0x9/0xa0
+ => __handle_irq_event_percpu+0x6f/0x1d0
+ => handle_irq_event+0x38/0x80
+ => handle_edge_irq+0x8b/0x230
+ => __common_interrupt+0x3f/0xb0
+ => common_interrupt+0x78/0x90
+ => asm_common_interrupt+0x26/0x40
+ => default_idle+0xf/0x20
+ => default_idle_call+0x3f/0x110
+ => do_idle+0x1ca/0x210
+ => cpu_startup_entry+0x29/0x30
+ => start_secondary+0xfc/0x100
+ => common_startup_64+0x12c/0x138
+          <idle>-0       [003] d.h2.  1999.597980: serial8250_handle_irq+0x4/0x410 <-serial8250_default_handle_irq+0x45/0x90
+          <idle>-0       [003] d.h2.  1999.597995: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => serial8250_handle_irq+0x9/0x410
+ => serial8250_default_handle_irq+0x45/0x90
+ => serial8250_interrupt+0x5a/0xa0
+ => __handle_irq_event_percpu+0x6f/0x1d0
+ => handle_irq_event+0x38/0x80
+ => handle_edge_irq+0x8b/0x230
+ => __common_interrupt+0x3f/0xb0
+ => common_interrupt+0x78/0x90
+ => asm_common_interrupt+0x26/0x40
+ => default_idle+0xf/0x20
+ => default_idle_call+0x3f/0x110
+ => do_idle+0x1ca/0x210
+ => cpu_startup_entry+0x29/0x30
+ => start_secondary+0xfc/0x100
+ => common_startup_64+0x12c/0x138
+          <idle>-0       [003] d.h3.  1999.598001: serial8250_tx_chars+0x4/0x270 <-serial8250_handle_irq+0x2f9/0x410
+          <idle>-0       [003] d.h3.  1999.598012: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => serial8250_tx_chars+0x9/0x270
+ => serial8250_handle_irq+0x2f9/0x410
+ => serial8250_default_handle_irq+0x45/0x90
+ => serial8250_interrupt+0x5a/0xa0
+ => __handle_irq_event_percpu+0x6f/0x1d0
+ => handle_irq_event+0x38/0x80
+ => handle_edge_irq+0x8b/0x230
+ => __common_interrupt+0x3f/0xb0
+ => common_interrupt+0x78/0x90
+ => asm_common_interrupt+0x26/0x40
+ => default_idle+0xf/0x20
+ => default_idle_call+0x3f/0x110
+ => do_idle+0x1ca/0x210
+ => cpu_startup_entry+0x29/0x30
+ => start_secondary+0xfc/0x100
+ => common_startup_64+0x12c/0x138
+          <idle>-0       [003] d.h2.  1999.598071: serial8250_handle_irq+0x4/0x410 <-serial8250_default_handle_irq+0x45/0x90
+          <idle>-0       [003] d.h2.  1999.598087: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => serial8250_handle_irq+0x9/0x410
+ => serial8250_default_handle_irq+0x45/0x90
+ => serial8250_interrupt+0x5a/0xa0
+ => __handle_irq_event_percpu+0x6f/0x1d0
+ => handle_irq_event+0x38/0x80
+ => handle_edge_irq+0x8b/0x230
+ => __common_interrupt+0x3f/0xb0
+ => common_interrupt+0x78/0x90
+ => asm_common_interrupt+0x26/0x40
+ => default_idle+0xf/0x20
+ => default_idle_call+0x3f/0x110
+ => do_idle+0x1ca/0x210
+ => cpu_startup_entry+0x29/0x30
+ => start_secondary+0xfc/0x100
+ => common_startup_64+0x12c/0x138
+          <idle>-0       [003] d.h1.  1999.598090: irq_handler_exit: irq=4 ret=handled
+* Interrupt Entry Point
+  - Log: <idle>-0       [003] d.h1.  1999.597913: irq_handler_entry: irq=4 name=ttyS0   <------------- interrupt handler entry point
+         <idle>-0       [003] d.h1.  1999.597924: serial8250_interrupt+0x4/0xa0 <-__handle_irq_event_percpu+0x6f/0x1d0
+         <idle>-0       [003] d.h1.  1999.597971: <stack trace>
+
+              ... (interrupt handling)
+
+         <idle>-0       [003] d.h1.  1999.598090: irq_handler_exit: irq=4 ret=handled   <------------- interrupt handler exit point
+  - Running Process: X (idle, PID: 0)
+  - Interrupt Name: ttyS0
+  - Interrupt IRQ:  4
+* Call Stack:
+          <idle>-0       [003] d.h3.  1999.598001: serial8250_tx_chars+0x4/0x270 <-serial8250_handle_irq+0x2f9/0x410
+          <idle>-0       [003] d.h3.  1999.598012: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => serial8250_tx_chars+0x9/0x270       <------------ enabled (filter)
+ => serial8250_handle_irq+0x2f9/0x410   <------------ enabled (* called 2 times in 1 interrupt process)..
+ => serial8250_default_handle_irq+0x45/0x90
+ => serial8250_interrupt+0x5a/0xa0      <------------ enabled (filter)
+ => __handle_irq_event_percpu+0x6f/0x1d0
+ => handle_irq_event+0x38/0x80
+ => handle_edge_irq+0x8b/0x230
+ => __common_interrupt+0x3f/0xb0
+ => common_interrupt+0x78/0x90
+ => asm_common_interrupt+0x26/0x40
+ => default_idle+0xf/0x20
+ => default_idle_call+0x3f/0x110
+ => do_idle+0x1ca/0x210
+ => cpu_startup_entry+0x29/0x30
+ => start_secondary+0xfc/0x100
+ => common_startup_64+0x12c/0x138
+
