@@ -28,6 +28,11 @@ function print_usage(){
     echo "  - serial8250_rx_chars"
     echo "  - serial8250_tx_chars"
     echo "  - serial8250_handle_irq"
+    echo "  - acpi_irq"
+    echo "  - acpi_irq_stats_init"
+    echo "  - acpi_ec_irq_handler"
+    echo "  - acpi_ged_irq_handler"
+    echo "  - __do_softirq"
     echo " "
 }
 
@@ -53,10 +58,29 @@ function config_event(){
         echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_free/enable
         echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_fork/enable
         echo 1 > /sys/kernel/debug/tracing/events/sched/sched_process_exit/enable
+        sleep 1
+        echo "event enabled"
 
     elif [ "$FUNCTIONS" =  "serial8250_interrupt" ]; then
         echo 1 > /sys/kernel/debug/tracing/events/irq/irq_handler_entry/enable
         echo 1 > /sys/kernel/debug/tracing/events/irq/irq_handler_exit/enable
+        sleep 1
+        echo "event enabled"
+
+    elif [ "$FUNCTIONS" =  "acpi_irq" ]; then
+        echo 1 > /sys/kernel/debug/tracing/events/irq/irq_handler_entry/enable
+        echo 1 > /sys/kernel/debug/tracing/events/irq/irq_handler_exit/enable
+        echo 1 > /sys/kernel/debug/tracing/events/sched/sched_switch/enable
+        echo 1 > /sys/kernel/debug/tracing/events/sched/sched_wakeup/enable
+        sleep 1
+        echo "event enabled"
+
+    elif [ "$FUNCTIONS" =  "__do_softirq" ]; then
+        echo 1 > /sys/kernel/debug/tracing/events/irq/softirq_raise/enable
+        echo 1 > /sys/kernel/debug/tracing/events/irq/softirq_entry/enable
+        echo 1 > /sys/kernel/debug/tracing/events/irq/softirq_exit/enable
+        sleep 1
+        echo "event enabled"
     fi
 }
 
