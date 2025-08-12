@@ -1,0 +1,53 @@
+
+## IRQ thread
+# ps -el | grep irq
+   16 root     [ksoftirqd/0]
+   24 root     [ksoftirqd/1]
+   29 root     [ksoftirqd/2]
+   34 root     [ksoftirqd/3]
+   46 root     [irq/9-acpi]
+
+=> check (IRQ 9, acpi IRQ thread)
+
+------------------------------------------------------------------------------------------
+
+## Test Environments (Soft IRQ)
+./ftrace.sh set __do_softirq
+./ftrace.sh on
+
+## Soft IRQ Events
+             exe-179     [001] d.h..   822.402141: softirq_raise: vec=7 [action=SCHED]
+             exe-179     [001] ..s..   822.402163: softirq_entry: vec=7 [action=SCHED]
+             exe-179     [001] ..s..   822.402186: softirq_exit: vec=7 [action=SCHED]
+             exe-179     [001] d.h..   822.403135: softirq_raise: vec=1 [action=TIMER]
+             exe-179     [001] ..s..   822.403163: softirq_entry: vec=1 [action=TIMER]
+             exe-179     [001] ..s..   822.403189: softirq_exit: vec=1 [action=TIMER]
+             exe-179     [001] d.h..   822.407197: softirq_raise: vec=1 [action=TIMER]
+             exe-179     [001] ..s..   822.407226: softirq_entry: vec=1 [action=TIMER]
+             exe-179     [001] ..s..   822.407251: softirq_exit: vec=1 [action=TIMER]
+             exe-179     [001] d.h..   822.408200: softirq_raise: vec=9 [action=RCU]
+             exe-179     [001] ..s..   822.408234: softirq_entry: vec=9 [action=RCU]
+             exe-179     [001] d.s..   822.408250: softirq_raise: vec=9 [action=RCU]
+             exe-179     [001] ..s..   822.408251: softirq_exit: vec=9 [action=RCU]
+
+* Soft IRQ vector number (defined in softirq_to_name[NR_SOFTIRQS] var, 1-10):
+  - vec=1: TIMER
+  - vec=7: SCHED
+  - vec=9: RCU
+* Events:
+  - raise: soft irq service requests
+  - entry: soft irq service start
+  - exit:  soft irq service exit
+* Context Info:
+  - h: top half(=interrupt context), d: preemption disabled (=cannot be scheduled)
+  - s: bottom half(=soft irq context)
+* Call Stack:
+ => [FTRACE TRAMPOLINE]
+ => __do_softirq+0x9/0x10
+ => do_softirq+0x4a/0x80
+ => flush_smp_call_function_queue+0x6e/0x70
+ => do_idle+0x147/0x210
+ => cpu_startup_entry+0x29/0x30
+ => start_secondary+0xfc/0x100
+ => common_startup_64+0x12c/0x138
+
