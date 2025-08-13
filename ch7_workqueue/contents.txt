@@ -1,0 +1,24 @@
+
+## Test Environments (Work Queue)
+./ftrace.sh set blk_mq_requeue_work
+./ftrace.sh on
+
+## Work Queue
+            sync-251     [000] d..2.  1125.806050: workqueue_queue_work: work struct=000000005f040299 function=blk_mq_requeue_work workqueue=kblockd req_cpu=64 cpu=0
+            sync-251     [000] d..2.  1125.806054: workqueue_activate_work: work struct 000000005f040299 function=blk_mq_requeue_work 
+    kworker/0:1H-53      [000] .....  1125.806086: workqueue_execute_start: work struct 000000005f040299: function blk_mq_requeue_work
+    kworker/0:1H-53      [000] .....  1125.806226: blk_mq_requeue_work+0x4/0x1a0 <-process_one_work+0x168/0x390
+    kworker/0:1H-53      [000] .....  1125.806571: <stack trace>
+* Events:
+  - workqueue_queue_work:  queuing work (Function: blk_mq_requeue_work / Process Name: sync / PID: 251)
+  - workqueue_activate_work:  register work_struct in worker pool linked list
+  - workqueue_execute_start:  wake up and start the work (Process Name: kworker/0:1H / PID: 53)
+* Call stack:
+ => [FTRACE TRAMPOLINE]
+ => blk_mq_requeue_work+0x9/0x1a0
+ => process_one_work+0x168/0x390
+ => worker_thread+0x298/0x3b0
+ => kthread+0xf7/0x1f0
+ => ret_from_fork+0x34/0x50
+ => ret_from_fork_asm+0x1a/0x30
+

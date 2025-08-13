@@ -33,6 +33,7 @@ function print_usage(){
     echo "  - acpi_ec_irq_handler"
     echo "  - acpi_ged_irq_handler"
     echo "  - __do_softirq"
+    echo "  - blk_mq_requeue_work"
     echo " "
 }
 
@@ -79,6 +80,14 @@ function config_event(){
         echo 1 > /sys/kernel/debug/tracing/events/irq/softirq_raise/enable
         echo 1 > /sys/kernel/debug/tracing/events/irq/softirq_entry/enable
         echo 1 > /sys/kernel/debug/tracing/events/irq/softirq_exit/enable
+        sleep 1
+        echo "event enabled"
+ 
+    elif [ "$FUNCTIONS" =  ""blk_mq_requeue_work ]; then
+        echo 1 > /sys/kernel/debug/tracing/events/workqueue/workqueue_activate_work/enable
+        echo 1 > /sys/kernel/debug/tracing/events/workqueue/workqueue_execute_end/enable
+        echo 1 > /sys/kernel/debug/tracing/events/workqueue/workqueue_execute_start/enable
+        echo 1 > /sys/kernel/debug/tracing/events/workqueue/workqueue_queue_work/enable
         sleep 1
         echo "event enabled"
     fi

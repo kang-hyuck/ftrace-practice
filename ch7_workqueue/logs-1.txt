@@ -1,0 +1,1289 @@
+# tracer: function
+#
+# entries-in-buffer/entries-written: 1270/1270   #P:4
+#
+#                                _-----=> irqs-off/BH-disabled
+#                               / _----=> need-resched
+#                              | / _---=> hardirq/softirq
+#                              || / _--=> preempt-depth
+#                              ||| / _-=> migrate-disable
+#                              |||| /     delay
+#           TASK-PID     CPU#  |||||  TIMESTAMP  FUNCTION
+#              | |         |   |||||     |         |
+             exe-241     [002] d..3.  1082.660108: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+             exe-241     [002] d..3.  1082.660133: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1082.662166: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1082.662231: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [002] d.h3.  1083.288347: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+          <idle>-0       [002] d.h3.  1083.288396: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1083.288875: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] d..2.  1083.288969: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+     kworker/2:1-48      [002] d..2.  1083.288980: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1083.288998: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1083.289019: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1083.289556: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [000] d.s2.  1083.457510: workqueue_queue_work: work struct=00000000741ee094 function=do_cache_clean workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1083.457565: workqueue_activate_work: work struct 00000000741ee094 function=do_cache_clean 
+          <idle>-0       [000] dNs2.  1083.457755: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1083.457768: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1083.458293: workqueue_execute_start: work struct 00000000741ee094: function do_cache_clean
+     kworker/0:0-8       [000] .....  1083.458370: workqueue_execute_end: work struct 00000000741ee094: function do_cache_clean
+     kworker/0:0-8       [000] .....  1083.458489: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] d..1.  1083.458548: workqueue_queue_work: work struct=00000000d03c5164 function=vmstat_update workqueue=mm_percpu_wq req_cpu=2 cpu=2
+     kworker/0:0-8       [000] d..1.  1083.458558: workqueue_activate_work: work struct 00000000d03c5164 function=vmstat_update 
+     kworker/0:0-8       [000] .....  1083.458695: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/2:1-48      [002] .....  1083.459679: workqueue_execute_start: work struct 00000000d03c5164: function vmstat_update
+     kworker/2:1-48      [002] .....  1083.460747: workqueue_execute_end: work struct 00000000d03c5164: function vmstat_update
+          <idle>-0       [002] d.s2.  1083.472566: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=2
+          <idle>-0       [002] d.s2.  1083.472593: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/2:1-48      [002] .....  1083.473137: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/2:1-48      [002] .....  1083.474175: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [001] d.s2.  1083.961182: workqueue_queue_work: work struct=00000000449c4f2e function=vmstat_update workqueue=mm_percpu_wq req_cpu=1 cpu=1
+          <idle>-0       [001] d.s2.  1083.961233: workqueue_activate_work: work struct 00000000449c4f2e function=vmstat_update 
+     kworker/1:1-49      [001] .....  1083.961821: workqueue_execute_start: work struct 00000000449c4f2e: function vmstat_update
+     kworker/1:1-49      [001] .....  1083.961880: workqueue_execute_end: work struct 00000000449c4f2e: function vmstat_update
+          <idle>-0       [003] d.s2.  1084.473039: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+          <idle>-0       [003] d.s2.  1084.473099: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/3:2-66      [003] .....  1084.474236: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1084.474293: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [000] d.s2.  1084.977418: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1084.977457: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+          <idle>-0       [002] dNs2.  1084.977616: workqueue_queue_work: work struct=00000000d03c5164 function=vmstat_update workqueue=mm_percpu_wq req_cpu=2 cpu=2
+          <idle>-0       [002] dNs2.  1084.977655: workqueue_activate_work: work struct 00000000d03c5164 function=vmstat_update 
+     kworker/0:0-8       [000] .....  1084.978006: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1084.978086: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/2:1-48      [002] .....  1084.978218: workqueue_execute_start: work struct 00000000d03c5164: function vmstat_update
+     kworker/2:1-48      [002] .....  1084.978257: workqueue_execute_end: work struct 00000000d03c5164: function vmstat_update
+          <idle>-0       [003] d.s2.  1085.329645: workqueue_queue_work: work struct=000000003dfb565e function=wb_workfn workqueue=writeback req_cpu=64 cpu=-1
+          <idle>-0       [003] d.s2.  1085.329691: workqueue_activate_work: work struct 000000003dfb565e function=wb_workfn 
+   kworker/u16:0-11      [003] .....  1085.330433: workqueue_execute_start: work struct 000000003dfb565e: function wb_workfn
+   kworker/u16:0-11      [003] .....  1085.333449: workqueue_execute_end: work struct 000000003dfb565e: function wb_workfn
+          <idle>-0       [000] d.s2.  1085.520881: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1085.520913: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/0:0-8       [000] .....  1085.521325: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/0:0-8       [000] .....  1085.524365: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.s2.  1085.552755: workqueue_queue_work: work struct=00000000cbe7435f function=wb_update_bandwidth_workfn workqueue=writeback req_cpu=64 cpu=-1
+          <idle>-0       [003] d.s2.  1085.552795: workqueue_activate_work: work struct 00000000cbe7435f function=wb_update_bandwidth_workfn 
+   kworker/u16:0-11      [003] .....  1085.553258: workqueue_execute_start: work struct 00000000cbe7435f: function wb_update_bandwidth_workfn
+   kworker/u16:0-11      [003] .....  1085.553286: workqueue_execute_end: work struct 00000000cbe7435f: function wb_update_bandwidth_workfn
+          <idle>-0       [000] d.s2.  1085.994239: workqueue_queue_work: work struct=00000000979295bb function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1085.994273: workqueue_activate_work: work struct 00000000979295bb function=neigh_managed_work 
+          <idle>-0       [000] dNs2.  1085.994416: workqueue_queue_work: work struct=0000000031299dc8 function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1085.994424: workqueue_activate_work: work struct 0000000031299dc8 function=neigh_managed_work 
+     kworker/0:0-8       [000] .....  1085.996219: workqueue_execute_start: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1085.996281: workqueue_execute_end: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1085.997083: workqueue_execute_start: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1085.997121: workqueue_execute_end: work struct 0000000031299dc8: function neigh_managed_work
+          <idle>-0       [001] d.s2.  1086.353291: workqueue_queue_work: work struct=00000000f2e85ce3 function=blk_mq_timeout_work workqueue=kblockd req_cpu=64 cpu=1
+          <idle>-0       [001] d.s2.  1086.353331: workqueue_activate_work: work struct 00000000f2e85ce3 function=blk_mq_timeout_work 
+    kworker/1:1H-144     [001] .....  1086.353842: workqueue_execute_start: work struct 00000000f2e85ce3: function blk_mq_timeout_work
+    kworker/1:1H-144     [001] .....  1086.354102: workqueue_execute_end: work struct 00000000f2e85ce3: function blk_mq_timeout_work
+          <idle>-0       [000] d.s2.  1087.008842: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1087.008909: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1087.010266: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] d..1.  1087.010351: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+     kworker/0:0-8       [000] d..1.  1087.010366: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/3:2-66      [003] .....  1087.011816: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1087.011919: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/0:0-8       [000] .....  1087.011965: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [001] d.s2.  1087.569302: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=1
+          <idle>-0       [001] d.s2.  1087.569341: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/1:1-49      [001] .....  1087.570646: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/1:1-49      [001] .....  1087.571870: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+           crond-141     [003] d.s1.  1088.789658: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+           crond-141     [003] d.s1.  1088.789727: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/3:2-66      [003] .....  1088.791215: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1088.791354: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [000] d.s2.  1088.914444: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1088.914482: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1088.915258: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1088.915342: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [000] d.s2.  1089.617308: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1089.617344: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/0:0-8       [000] .....  1089.618866: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/0:0-8       [000] .N...  1089.622138: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.s2.  1090.033407: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+          <idle>-0       [003] d.s2.  1090.033459: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/3:2-66      [003] .....  1090.034611: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1090.034683: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [002] d.s2.  1090.448999: workqueue_queue_work: work struct=000000003dfb565e function=wb_workfn workqueue=writeback req_cpu=64 cpu=-1
+          <idle>-0       [002] d.s2.  1090.449039: workqueue_activate_work: work struct 000000003dfb565e function=wb_workfn 
+   kworker/u16:0-11      [003] .....  1090.450989: workqueue_execute_start: work struct 000000003dfb565e: function wb_workfn
+   kworker/u16:0-11      [003] .....  1090.453106: workqueue_execute_end: work struct 000000003dfb565e: function wb_workfn
+          <idle>-0       [003] d.h4.  1090.645519: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1090.645528: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1090.645778: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] d..3.  1090.645804: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+   kworker/u16:0-11      [003] d..3.  1090.645807: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:0-11      [003] .....  1090.645866: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/3:2-66      [003] .....  1090.645892: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1090.645966: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1090.851498: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1090.851508: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1090.851617: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1090.851773: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1091.041065: workqueue_queue_work: work struct=00000000b43548d2 function=neigh_periodic_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1091.041103: workqueue_activate_work: work struct 00000000b43548d2 function=neigh_periodic_work 
+          <idle>-0       [000] dNs2.  1091.042209: workqueue_queue_work: work struct=000000003b5af5a1 function=neigh_periodic_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1091.042235: workqueue_activate_work: work struct 000000003b5af5a1 function=neigh_periodic_work 
+          <idle>-0       [000] dNs2.  1091.042269: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1091.042279: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1091.042667: workqueue_execute_start: work struct 00000000b43548d2: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1091.042732: workqueue_execute_end: work struct 00000000b43548d2: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1091.044297: workqueue_execute_start: work struct 000000003b5af5a1: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1091.044352: workqueue_execute_end: work struct 000000003b5af5a1: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1091.045256: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1091.045360: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [003] d.h3.  1091.477978: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+          <idle>-0       [003] d.h3.  1091.478020: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/3:2-66      [003] .....  1091.478590: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] d..2.  1091.478694: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+     kworker/3:2-66      [003] d..2.  1091.478708: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/3:2-66      [003] .....  1091.478728: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1091.479325: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1091.479468: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [000] d.s2.  1091.545133: workqueue_queue_work: work struct=0000000031299dc8 function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1091.545170: workqueue_activate_work: work struct 0000000031299dc8 function=neigh_managed_work 
+          <idle>-0       [000] dNs2.  1091.545713: workqueue_queue_work: work struct=00000000979295bb function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1091.545730: workqueue_activate_work: work struct 00000000979295bb function=neigh_managed_work 
+     kworker/0:0-8       [000] .....  1091.546096: workqueue_execute_start: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1091.546147: workqueue_execute_end: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1091.546166: workqueue_execute_start: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1091.546182: workqueue_execute_end: work struct 00000000979295bb: function neigh_managed_work
+          <idle>-0       [002] d.s2.  1091.665015: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=2
+          <idle>-0       [002] d.s2.  1091.665048: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/2:1-48      [002] .....  1091.665979: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/2:1-48      [002] .....  1091.666768: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h4.  1092.086394: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1092.086417: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1092.086803: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] d..3.  1092.086855: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+   kworker/u16:0-11      [003] d..3.  1092.086863: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:0-11      [003] .....  1092.087055: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/3:2-66      [003] .....  1092.087139: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1092.087219: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1092.161722: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1092.161759: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1092.162295: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1092.162580: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1092.243270: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1092.243291: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1092.243606: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1092.243767: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1092.449301: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1092.449326: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1092.450232: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1092.450448: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1092.609975: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1092.610000: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1092.610341: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1092.610522: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1092.829279: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1092.829305: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1092.830073: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1092.830250: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1093.057484: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1093.057524: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1093.060318: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1093.060417: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [003] d.h4.  1093.369777: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1093.369788: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1093.369902: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1093.369955: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1093.397709: workqueue_queue_work: work struct=00000000736c6d78 function=delayed_vfree_work workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1093.397719: workqueue_activate_work: work struct 00000000736c6d78 function=delayed_vfree_work 
+     kworker/0:0-8       [000] .....  1093.397765: workqueue_execute_start: work struct 00000000736c6d78: function delayed_vfree_work
+     kworker/0:0-8       [000] .....  1093.397788: workqueue_execute_end: work struct 00000000736c6d78: function delayed_vfree_work
+          <idle>-0       [003] d.h4.  1093.709105: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1093.709142: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1093.709601: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1093.710871: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [002] d.s2.  1093.713201: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=2
+          <idle>-0       [002] d.s2.  1093.713253: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/2:1-48      [002] .....  1093.713573: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/2:1-48      [002] .....  1093.714060: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h4.  1093.790485: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1093.790522: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1093.791042: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1093.791306: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1093.831178: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1093.831198: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1093.831476: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1093.831618: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1093.895846: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1093.895859: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1093.896083: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1093.896177: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1093.942087: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1093.942112: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1093.942467: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1093.942697: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1094.007358: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1094.007366: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1094.007467: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1094.007518: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1094.052755: workqueue_queue_work: work struct=00000000736c6d78 function=delayed_vfree_work workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1094.052766: workqueue_activate_work: work struct 00000000736c6d78 function=delayed_vfree_work 
+     kworker/0:0-8       [000] .....  1094.052816: workqueue_execute_start: work struct 00000000736c6d78: function delayed_vfree_work
+     kworker/0:0-8       [000] .....  1094.052837: workqueue_execute_end: work struct 00000000736c6d78: function delayed_vfree_work
+          <idle>-0       [003] d.h4.  1094.214882: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1094.214892: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1094.214999: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1094.215053: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1094.404723: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1094.404732: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1094.404841: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1094.404895: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h3.  1094.961014: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+          <idle>-0       [003] d.h3.  1094.961055: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/3:2-66      [003] .....  1094.961783: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] d..2.  1094.961835: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+     kworker/3:2-66      [003] d..2.  1094.961842: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/3:2-66      [003] .....  1094.961848: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1094.961855: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1094.961865: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [000] d.s2.  1095.057317: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1095.057353: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1095.058137: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] d..1.  1095.058226: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+     kworker/0:0-8       [000] d..1.  1095.058237: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+     kworker/0:0-8       [000] d..1.  1095.058293: workqueue_queue_work: work struct=00000000d03c5164 function=vmstat_update workqueue=mm_percpu_wq req_cpu=2 cpu=2
+     kworker/0:0-8       [000] d..1.  1095.058299: workqueue_activate_work: work struct 00000000d03c5164 function=vmstat_update 
+     kworker/0:0-8       [000] .....  1095.058566: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1095.058596: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1095.058664: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/2:1-48      [002] .....  1095.059343: workqueue_execute_start: work struct 00000000d03c5164: function vmstat_update
+     kworker/2:1-48      [002] .....  1095.059464: workqueue_execute_end: work struct 00000000d03c5164: function vmstat_update
+          <idle>-0       [000] d.s2.  1095.569082: workqueue_queue_work: work struct=000000003dfb565e function=wb_workfn workqueue=writeback req_cpu=64 cpu=-1
+          <idle>-0       [000] d.s2.  1095.569121: workqueue_activate_work: work struct 000000003dfb565e function=wb_workfn 
+   kworker/u16:0-11      [003] .....  1095.570922: workqueue_execute_start: work struct 000000003dfb565e: function wb_workfn
+   kworker/u16:0-11      [003] .....  1095.572219: workqueue_execute_end: work struct 000000003dfb565e: function wb_workfn
+          <idle>-0       [003] d.s2.  1095.761476: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=3
+          <idle>-0       [003] d.s2.  1095.761516: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/3:2-66      [003] .....  1095.762102: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/3:2-66      [003] .....  1095.765328: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h4.  1096.338441: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1096.338464: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1096.339175: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] d..3.  1096.339236: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+   kworker/u16:0-11      [003] d..3.  1096.339246: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:0-11      [003] .....  1096.339449: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/3:2-66      [003] .....  1096.339533: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1096.339619: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1096.404343: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1096.404352: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1096.404496: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1096.404584: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1096.515258: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1096.515272: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1096.515502: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1096.515618: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1096.645847: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1096.645865: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1096.646169: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1096.646323: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1096.798548: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1096.798569: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1096.798855: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1096.798994: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1096.937113: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1096.937138: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1096.937499: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] .....  1096.937685: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+              sh-147     [002] d.s1.  1096.939498: workqueue_queue_work: work struct=00000000d03c5164 function=vmstat_update workqueue=mm_percpu_wq req_cpu=2 cpu=2
+              sh-147     [002] d.s1.  1096.939523: workqueue_activate_work: work struct 00000000d03c5164 function=vmstat_update 
+     kworker/2:1-48      [002] .....  1096.941179: workqueue_execute_start: work struct 00000000d03c5164: function vmstat_update
+     kworker/2:1-48      [002] .....  1096.941237: workqueue_execute_end: work struct 00000000d03c5164: function vmstat_update
+          <idle>-0       [000] d.s2.  1097.097278: workqueue_queue_work: work struct=00000000979295bb function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1097.097297: workqueue_activate_work: work struct 00000000979295bb function=neigh_managed_work 
+          <idle>-0       [000] dNs2.  1097.097381: workqueue_queue_work: work struct=0000000031299dc8 function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1097.097384: workqueue_activate_work: work struct 0000000031299dc8 function=neigh_managed_work 
+          <idle>-0       [000] dNs2.  1097.097392: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+          <idle>-0       [000] dNs2.  1097.097395: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+          <idle>-0       [000] dNs2.  1097.097399: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1097.097402: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1097.097592: workqueue_execute_start: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1097.097622: workqueue_execute_end: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1097.097630: workqueue_execute_start: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1097.097638: workqueue_execute_end: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1097.098744: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1097.098769: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1097.098782: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1097.098812: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [003] d.h3.  1097.578211: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+          <idle>-0       [003] d.h3.  1097.578246: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/3:2-66      [003] .....  1097.578745: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] d..2.  1097.578835: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+     kworker/3:2-66      [003] d..2.  1097.578847: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/3:2-66      [003] .....  1097.578863: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1097.578883: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1097.578909: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [001] d.s2.  1097.808560: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=1
+          <idle>-0       [001] d.s2.  1097.808601: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/1:1-49      [001] .....  1097.809200: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/1:1-49      [001] .....  1097.809735: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h4.  1097.810797: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1097.810831: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [003] .....  1097.812425: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [003] d..3.  1097.812521: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+   kworker/u16:0-11      [003] d..3.  1097.812537: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/3:2-66      [003] .....  1097.816597: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1097.816735: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+   kworker/u16:0-11      [002] .....  1097.817727: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1097.817753: workqueue_execute_start: work struct 000000009fe63fa4: function wq_barrier_func
+   kworker/u16:0-11      [002] .....  1097.817809: workqueue_execute_end: work struct 000000009fe63fa4: function wq_barrier_func
+          <idle>-0       [003] d.h4.  1098.020606: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1098.020728: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1098.021873: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1098.023303: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1098.140148: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1098.140176: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1098.140907: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1098.141131: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1098.516266: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1098.516277: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1098.516483: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1098.516534: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1098.552764: workqueue_queue_work: work struct=00000000736c6d78 function=delayed_vfree_work workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1098.552776: workqueue_activate_work: work struct 00000000736c6d78 function=delayed_vfree_work 
+     kworker/0:0-8       [000] .....  1098.552830: workqueue_execute_start: work struct 00000000736c6d78: function delayed_vfree_work
+     kworker/0:0-8       [000] .....  1098.552871: workqueue_execute_end: work struct 00000000736c6d78: function delayed_vfree_work
+          <idle>-0       [003] d.h4.  1098.733684: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1098.733724: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1098.734270: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1098.734492: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1098.820746: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1098.820770: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1098.822086: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1098.822544: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1098.862814: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1098.862823: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1098.863007: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1098.863076: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1098.903920: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1098.903940: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1098.904885: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1098.905077: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1098.974195: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1098.974215: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1098.974817: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1098.975149: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1099.008625: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1099.008632: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1099.008781: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1099.008830: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+              ls-246     [000] d.s1.  1099.010793: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+              ls-246     [000] d.s1.  1099.010802: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1099.011816: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] d..1.  1099.011833: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+     kworker/0:0-8       [000] d..1.  1099.011839: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+     kworker/0:0-8       [000] d..1.  1099.011851: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+     kworker/0:0-8       [000] d..1.  1099.011852: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/0:0-8       [000] .....  1099.011878: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1099.011883: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1099.011894: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/3:2-66      [003] .....  1099.011953: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1099.011971: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [000] d.s2.  1099.060764: workqueue_queue_work: work struct=00000000736c6d78 function=delayed_vfree_work workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1099.060774: workqueue_activate_work: work struct 00000000736c6d78 function=delayed_vfree_work 
+     kworker/0:0-8       [000] .....  1099.060827: workqueue_execute_start: work struct 00000000736c6d78: function delayed_vfree_work
+     kworker/0:0-8       [000] .....  1099.060852: workqueue_execute_end: work struct 00000000736c6d78: function delayed_vfree_work
+          <idle>-0       [003] d.h4.  1099.201044: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1099.201056: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1099.201257: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1099.201307: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1099.408989: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1099.408999: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1099.409158: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1099.409213: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.s2.  1099.857178: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=3
+          <idle>-0       [003] d.s2.  1099.857222: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/3:2-66      [003] .....  1099.859977: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/3:2-66      [003] .....  1099.860638: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h3.  1100.035847: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+          <idle>-0       [003] d.h3.  1100.035888: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/3:2-66      [003] .....  1100.036456: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] d..2.  1100.036563: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+     kworker/3:2-66      [003] d..2.  1100.036575: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/3:2-66      [003] .....  1100.036595: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1100.036611: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1100.037320: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1100.656587: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1100.656608: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1100.658152: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] d..3.  1100.658213: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+   kworker/u16:0-11      [002] d..3.  1100.658224: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1100.658411: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1100.658493: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+   kworker/u16:0-11      [002] .....  1100.658546: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.s2.  1100.688605: workqueue_queue_work: work struct=000000003dfb565e function=wb_workfn workqueue=writeback req_cpu=64 cpu=-1
+          <idle>-0       [003] d.s2.  1100.688638: workqueue_activate_work: work struct 000000003dfb565e function=wb_workfn 
+          <idle>-0       [003] d.s2.  1100.688959: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+          <idle>-0       [003] d.s2.  1100.688976: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+   kworker/u16:0-11      [002] .....  1100.689923: workqueue_execute_start: work struct 000000003dfb565e: function wb_workfn
+     kworker/3:2-66      [003] .....  1100.690023: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1100.690089: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+   kworker/u16:0-11      [002] .....  1100.692651: workqueue_execute_end: work struct 000000003dfb565e: function wb_workfn
+          <idle>-0       [003] d.h4.  1100.712777: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1100.712796: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1100.713426: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1100.713588: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1100.825867: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1100.825890: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1100.826838: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1100.827598: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [002] d.s2.  1100.913017: workqueue_queue_work: work struct=00000000cbe7435f function=wb_update_bandwidth_workfn workqueue=writeback req_cpu=64 cpu=-1
+          <idle>-0       [002] d.s2.  1100.913050: workqueue_activate_work: work struct 00000000cbe7435f function=wb_update_bandwidth_workfn 
+   kworker/u16:0-11      [002] .....  1100.915134: workqueue_execute_start: work struct 00000000cbe7435f: function wb_update_bandwidth_workfn
+   kworker/u16:0-11      [002] .....  1100.915230: workqueue_execute_end: work struct 00000000cbe7435f: function wb_update_bandwidth_workfn
+          <idle>-0       [003] d.h4.  1100.923409: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1100.923428: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1100.924134: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1100.924325: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1101.136778: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+          <idle>-0       [000] d.s2.  1101.136811: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+          <idle>-0       [000] dNs2.  1101.136956: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1101.136966: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1101.137502: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1101.137549: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1101.137567: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] d..1.  1101.137643: workqueue_queue_work: work struct=00000000d03c5164 function=vmstat_update workqueue=mm_percpu_wq req_cpu=2 cpu=2
+     kworker/0:0-8       [000] d..1.  1101.137652: workqueue_activate_work: work struct 00000000d03c5164 function=vmstat_update 
+     kworker/0:0-8       [000] .....  1101.139228: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/2:1-48      [002] .....  1101.140467: workqueue_execute_start: work struct 00000000d03c5164: function vmstat_update
+     kworker/2:1-48      [002] .....  1101.140552: workqueue_execute_end: work struct 00000000d03c5164: function vmstat_update
+          <idle>-0       [003] d.h4.  1101.147576: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1101.147596: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1101.148307: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1101.148457: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1101.241022: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1101.241045: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1101.242059: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1101.242248: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [002] d.h3.  1101.869669: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+          <idle>-0       [002] d.h3.  1101.869706: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1101.870271: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] d..2.  1101.870371: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+     kworker/2:1-48      [002] d..2.  1101.870386: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1101.870407: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1101.870424: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1101.870453: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [002] d.s2.  1101.903933: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=2
+          <idle>-0       [002] d.s2.  1101.903938: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/2:1-48      [002] .....  1101.904225: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/2:1-48      [002] .....  1101.904376: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h4.  1102.278660: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1102.278679: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1102.279268: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] d..3.  1102.279323: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+   kworker/u16:0-11      [002] d..3.  1102.279332: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:0-11      [002] .....  1102.279487: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/2:1-48      [002] .....  1102.279551: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1102.279613: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1102.469172: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1102.469193: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1102.470608: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1102.471254: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1102.527345: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1102.527366: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1102.527847: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1102.528011: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1102.692708: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1102.692735: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1102.693490: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] d.s1.  1102.694342: workqueue_queue_work: work struct=00000000d03c5164 function=vmstat_update workqueue=mm_percpu_wq req_cpu=2 cpu=2
+   kworker/u16:0-11      [002] d.s1.  1102.694359: workqueue_activate_work: work struct 00000000d03c5164 function=vmstat_update 
+     kworker/2:1-48      [002] .....  1102.694573: workqueue_execute_start: work struct 00000000d03c5164: function vmstat_update
+     kworker/2:1-48      [002] .....  1102.694603: workqueue_execute_end: work struct 00000000d03c5164: function vmstat_update
+   kworker/u16:0-11      [002] .....  1102.695260: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1102.736976: workqueue_queue_work: work struct=0000000031299dc8 function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1102.737011: workqueue_activate_work: work struct 0000000031299dc8 function=neigh_managed_work 
+          <idle>-0       [000] dNs2.  1102.737178: workqueue_queue_work: work struct=00000000979295bb function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1102.737186: workqueue_activate_work: work struct 00000000979295bb function=neigh_managed_work 
+          <idle>-0       [000] dNs2.  1102.737245: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1102.737252: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1102.737746: workqueue_execute_start: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1102.737812: workqueue_execute_end: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1102.737835: workqueue_execute_start: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1102.737854: workqueue_execute_end: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1102.737867: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1102.737923: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [003] d.h4.  1102.843191: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1102.843199: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1102.843453: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1102.843505: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [002] d.h3.  1103.469594: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+          <idle>-0       [002] d.h3.  1103.469624: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1103.470070: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] d..2.  1103.470141: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+     kworker/2:1-48      [002] d..2.  1103.470153: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1103.470167: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1103.470182: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1103.470454: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1103.674956: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1103.674994: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1103.676363: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] d..3.  1103.676426: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+   kworker/u16:0-11      [002] d..3.  1103.676436: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:0-11      [002] .....  1103.676597: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/2:1-48      [002] .....  1103.676670: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1103.677320: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1103.787065: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1103.787101: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1103.788224: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1103.788535: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1103.951113: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1103.951129: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1103.951573: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1103.951744: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] d.s1.  1103.952233: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=2
+   kworker/u16:0-11      [002] d.s1.  1103.952245: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/2:1-48      [002] .....  1103.952431: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/2:1-48      [002] .....  1103.953623: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [000] d.s2.  1103.955158: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1103.955185: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1103.955470: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1103.955537: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [003] d.h4.  1104.054174: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1104.054202: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1104.054988: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1104.055195: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1104.205122: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1104.205132: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1104.205292: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1104.205349: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1104.242741: workqueue_queue_work: work struct=00000000736c6d78 function=delayed_vfree_work workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1104.242752: workqueue_activate_work: work struct 00000000736c6d78 function=delayed_vfree_work 
+     kworker/0:0-8       [000] .....  1104.242801: workqueue_execute_start: work struct 00000000736c6d78: function delayed_vfree_work
+     kworker/0:0-8       [000] .....  1104.242823: workqueue_execute_end: work struct 00000000736c6d78: function delayed_vfree_work
+          <idle>-0       [002] d.h3.  1104.851205: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+          <idle>-0       [002] d.h3.  1104.851228: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1104.851547: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] d..2.  1104.851643: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+     kworker/2:1-48      [002] d..2.  1104.851657: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1104.851675: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1104.851695: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1104.851721: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1105.079310: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1105.079345: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1105.079835: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] d..3.  1105.079871: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+   kworker/u16:0-11      [002] d..3.  1105.079874: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:0-11      [002] .....  1105.079932: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/2:1-48      [002] .....  1105.079958: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1105.079980: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1105.200729: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1105.200743: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1105.201059: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1105.201213: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1105.323008: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1105.323025: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1105.323997: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1105.324218: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1105.400666: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1105.400684: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1105.401283: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1105.401614: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1105.690804: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1105.690838: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1105.691449: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] d..1.  1105.691523: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+     kworker/0:0-8       [000] d..1.  1105.691533: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+     kworker/0:0-8       [000] d..1.  1105.691586: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+     kworker/0:0-8       [000] d..1.  1105.691591: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/0:0-8       [000] .....  1105.691661: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1105.691678: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1105.691726: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/3:2-66      [003] .....  1105.692794: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1105.693549: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [003] d.h4.  1105.741158: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1105.741180: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1105.741933: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1105.742132: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [002] d.s2.  1105.809325: workqueue_queue_work: work struct=000000003dfb565e function=wb_workfn workqueue=writeback req_cpu=64 cpu=-1
+          <idle>-0       [002] d.s2.  1105.809357: workqueue_activate_work: work struct 000000003dfb565e function=wb_workfn 
+   kworker/u16:0-11      [002] .....  1105.810097: workqueue_execute_start: work struct 000000003dfb565e: function wb_workfn
+   kworker/u16:0-11      [002] .....  1105.810268: workqueue_execute_end: work struct 000000003dfb565e: function wb_workfn
+          <idle>-0       [001] d.s2.  1106.000802: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=1
+          <idle>-0       [001] d.s2.  1106.000838: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/1:1-49      [001] .....  1106.002241: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/1:1-49      [001] .....  1106.002962: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h4.  1106.243432: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1106.243455: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1106.243868: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1106.244162: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1106.391902: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1106.391925: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1106.392514: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1106.393115: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1106.472127: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1106.472135: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1106.472343: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1106.472392: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1106.597903: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1106.597914: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1106.598473: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1106.600026: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.s2.  1106.704594: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+          <idle>-0       [003] d.s2.  1106.704626: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/3:2-66      [003] .....  1106.705677: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1106.705727: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [003] d.h4.  1106.802520: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1106.802554: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1106.803573: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1106.803944: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.s2.  1106.832414: workqueue_queue_work: work struct=00000000f2e85ce3 function=blk_mq_timeout_work workqueue=kblockd req_cpu=64 cpu=3
+          <idle>-0       [003] d.s2.  1106.832442: workqueue_activate_work: work struct 00000000f2e85ce3 function=blk_mq_timeout_work 
+    kworker/3:0H-36      [003] .....  1106.832907: workqueue_execute_start: work struct 00000000f2e85ce3: function blk_mq_timeout_work
+    kworker/3:0H-36      [003] .....  1106.833039: workqueue_execute_end: work struct 00000000f2e85ce3: function blk_mq_timeout_work
+          <idle>-0       [003] d.h4.  1107.138817: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1107.138848: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1107.139521: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1107.139707: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1107.210052: workqueue_queue_work: work struct=000000003b5af5a1 function=neigh_periodic_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1107.210089: workqueue_activate_work: work struct 000000003b5af5a1 function=neigh_periodic_work 
+          <idle>-0       [000] dNs2.  1107.211730: workqueue_queue_work: work struct=00000000b43548d2 function=neigh_periodic_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1107.211755: workqueue_activate_work: work struct 00000000b43548d2 function=neigh_periodic_work 
+          <idle>-0       [000] dNs2.  1107.211786: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+          <idle>-0       [000] dNs2.  1107.211793: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+          <idle>-0       [000] dNs2.  1107.211804: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1107.211811: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1107.212555: workqueue_execute_start: work struct 000000003b5af5a1: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1107.212626: workqueue_execute_end: work struct 000000003b5af5a1: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1107.212651: workqueue_execute_start: work struct 00000000b43548d2: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1107.212673: workqueue_execute_end: work struct 00000000b43548d2: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1107.212684: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1107.212701: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1107.212702: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1107.212709: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [003] d.h4.  1107.334164: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1107.334195: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1107.334916: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1107.335392: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [002] d.h3.  1107.963367: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+          <idle>-0       [002] d.h3.  1107.963387: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1107.963623: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] d..2.  1107.963662: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+     kworker/2:1-48      [002] d..2.  1107.963667: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1107.963674: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1107.963681: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1107.963691: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [001] d.s2.  1108.048997: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=1
+          <idle>-0       [001] d.s2.  1108.049034: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/1:1-49      [001] .....  1108.050512: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/1:1-49      [001] .....  1108.051625: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [000] d.s2.  1108.052686: workqueue_queue_work: work struct=00000000979295bb function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1108.052691: workqueue_activate_work: work struct 00000000979295bb function=neigh_managed_work 
+          <idle>-0       [000] dNs2.  1108.052710: workqueue_queue_work: work struct=0000000031299dc8 function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1108.052711: workqueue_activate_work: work struct 0000000031299dc8 function=neigh_managed_work 
+     kworker/0:0-8       [000] .....  1108.052767: workqueue_execute_start: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1108.052774: workqueue_execute_end: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1108.052777: workqueue_execute_start: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1108.052779: workqueue_execute_end: work struct 0000000031299dc8: function neigh_managed_work
+          <idle>-0       [003] d.h4.  1108.070110: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1108.070133: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1108.070968: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] d..3.  1108.071020: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+   kworker/u16:0-11      [002] d..3.  1108.071029: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:0-11      [002] .....  1108.071175: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/2:1-48      [002] .....  1108.071248: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1108.071317: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1108.653073: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1108.653113: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1108.653830: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1108.654039: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1108.819282: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1108.819305: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1108.819855: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1108.820189: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1109.181000: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1109.181024: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1109.181528: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1109.181854: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1109.224761: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1109.224795: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1109.225367: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1109.225453: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [003] d.h4.  1109.475748: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1109.475775: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1109.476503: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1109.476857: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1109.705871: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1109.705898: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1109.707449: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1109.707618: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1109.875856: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1109.875866: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1109.876044: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1109.876109: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [002] d.s2.  1110.096916: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=2
+          <idle>-0       [002] d.s2.  1110.096955: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/2:1-48      [002] .....  1110.097620: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/2:1-48      [002] .....  1110.099280: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h4.  1110.138003: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1110.138031: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1110.138557: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1110.138826: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1110.358458: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1110.358480: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1110.359093: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1110.359256: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1110.499431: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1110.499451: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1110.500197: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1110.500487: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1110.564251: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1110.564281: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1110.565110: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1110.565298: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1110.826638: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1110.826662: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1110.827459: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1110.828137: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.s2.  1110.929248: workqueue_queue_work: work struct=000000003dfb565e function=wb_workfn workqueue=writeback req_cpu=64 cpu=-1
+          <idle>-0       [003] d.s2.  1110.929285: workqueue_activate_work: work struct 000000003dfb565e function=wb_workfn 
+   kworker/u16:0-11      [002] .....  1110.930785: workqueue_execute_start: work struct 000000003dfb565e: function wb_workfn
+   kworker/u16:0-11      [002] .....  1110.930927: workqueue_execute_end: work struct 000000003dfb565e: function wb_workfn
+          <idle>-0       [003] d.h4.  1110.958422: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1110.958440: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1110.958988: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1110.959196: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1111.457066: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1111.457100: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1111.457883: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1111.457957: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [003] d.h4.  1111.486547: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1111.486558: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:0-11      [002] .....  1111.486700: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:0-11      [002] .....  1111.486751: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [001] d.s2.  1111.522701: workqueue_queue_work: work struct=000000008b5ec626 function=delayed_vfree_work workqueue=events req_cpu=64 cpu=1
+          <idle>-0       [001] d.s2.  1111.522713: workqueue_activate_work: work struct 000000008b5ec626 function=delayed_vfree_work 
+     kworker/1:1-49      [001] .....  1111.522759: workqueue_execute_start: work struct 000000008b5ec626: function delayed_vfree_work
+     kworker/1:1-49      [001] .....  1111.522780: workqueue_execute_end: work struct 000000008b5ec626: function delayed_vfree_work
+          <idle>-0       [000] d.s2.  1111.953137: workqueue_queue_work: work struct=0000000022682fdb function=check_lifetime workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1111.953171: workqueue_activate_work: work struct 0000000022682fdb function=check_lifetime 
+          <idle>-0       [002] d.s2.  1111.953182: workqueue_queue_work: work struct=0000000038cd911c function=gc_worker workqueue=events_power_efficient req_cpu=64 cpu=2
+          <idle>-0       [002] d.s2.  1111.953226: workqueue_activate_work: work struct 0000000038cd911c function=gc_worker 
+     kworker/0:0-8       [000] .....  1111.955071: workqueue_execute_start: work struct 0000000022682fdb: function check_lifetime
+     kworker/0:0-8       [000] .....  1111.955124: workqueue_execute_end: work struct 0000000022682fdb: function check_lifetime
+     kworker/2:1-48      [002] .....  1111.955426: workqueue_execute_start: work struct 0000000038cd911c: function gc_worker
+     kworker/2:1-48      [002] d..1.  1111.965784: workqueue_queue_work: work struct=0000000038cd911c function=gc_worker workqueue=events_power_efficient req_cpu=64 cpu=2
+     kworker/2:1-48      [002] d..1.  1111.965790: workqueue_activate_work: work struct 0000000038cd911c function=gc_worker 
+     kworker/2:1-48      [002] .N...  1111.965822: workqueue_execute_end: work struct 0000000038cd911c: function gc_worker
+     kworker/2:1-48      [002] .....  1111.965876: workqueue_execute_start: work struct 0000000038cd911c: function gc_worker
+     kworker/2:1-48      [002] .....  1111.968572: workqueue_execute_end: work struct 0000000038cd911c: function gc_worker
+          <idle>-0       [002] d.h3.  1112.133822: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+          <idle>-0       [002] d.h3.  1112.133861: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1112.134527: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] d..2.  1112.134617: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=2
+     kworker/2:1-48      [002] d..2.  1112.134631: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/2:1-48      [002] .....  1112.134649: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1112.134667: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/2:1-48      [002] .....  1112.135386: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [002] d.s2.  1112.144953: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=2
+          <idle>-0       [002] d.s2.  1112.144985: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/2:1-48      [002] .....  1112.145604: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/2:1-48      [002] .....  1112.146666: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [000] d.s2.  1113.257278: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1113.257315: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1113.258863: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] d..1.  1113.258939: workqueue_queue_work: work struct=00000000449c4f2e function=vmstat_update workqueue=mm_percpu_wq req_cpu=1 cpu=1
+     kworker/0:0-8       [000] d..1.  1113.258953: workqueue_activate_work: work struct 00000000449c4f2e function=vmstat_update 
+     kworker/0:0-8       [000] d..1.  1113.259243: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+     kworker/0:0-8       [000] d..1.  1113.259260: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/0:0-8       [000] .....  1113.259413: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/1:1-49      [001] .....  1113.260045: workqueue_execute_start: work struct 00000000449c4f2e: function vmstat_update
+     kworker/1:1-49      [001] .....  1113.260161: workqueue_execute_end: work struct 00000000449c4f2e: function vmstat_update
+     kworker/3:2-66      [003] .....  1113.261011: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1113.261140: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [000] d.s2.  1113.760430: workqueue_queue_work: work struct=0000000031299dc8 function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1113.760446: workqueue_activate_work: work struct 0000000031299dc8 function=neigh_managed_work 
+          <idle>-0       [000] dNs2.  1113.760719: workqueue_queue_work: work struct=00000000979295bb function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1113.760727: workqueue_activate_work: work struct 00000000979295bb function=neigh_managed_work 
+     kworker/0:0-8       [000] .....  1113.760927: workqueue_execute_start: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1113.760950: workqueue_execute_end: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1113.760957: workqueue_execute_start: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1113.760961: workqueue_execute_end: work struct 00000000979295bb: function neigh_managed_work
+          <idle>-0       [001] d.s2.  1114.192827: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=1
+          <idle>-0       [001] d.s2.  1114.192849: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/1:1-49      [001] .....  1114.193463: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/1:1-49      [001] .....  1114.195375: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [000] d.s2.  1114.198251: workqueue_queue_work: work struct=00000000741ee094 function=do_cache_clean workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1114.198284: workqueue_activate_work: work struct 00000000741ee094 function=do_cache_clean 
+     kworker/0:0-8       [000] .....  1114.199379: workqueue_execute_start: work struct 00000000741ee094: function do_cache_clean
+     kworker/0:0-8       [000] .....  1114.199511: workqueue_execute_end: work struct 00000000741ee094: function do_cache_clean
+          <idle>-0       [003] d.s2.  1114.769211: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+          <idle>-0       [003] d.s2.  1114.769254: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/3:2-66      [003] .....  1114.770369: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1114.770438: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [000] d.s2.  1115.273077: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1115.273104: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1115.273642: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1115.274240: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [001] d.s2.  1115.777639: workqueue_queue_work: work struct=00000000449c4f2e function=vmstat_update workqueue=mm_percpu_wq req_cpu=1 cpu=1
+          <idle>-0       [001] d.s2.  1115.777674: workqueue_activate_work: work struct 00000000449c4f2e function=vmstat_update 
+     kworker/1:1-49      [001] .....  1115.778735: workqueue_execute_start: work struct 00000000449c4f2e: function vmstat_update
+     kworker/1:1-49      [001] .....  1115.778785: workqueue_execute_end: work struct 00000000449c4f2e: function vmstat_update
+          <idle>-0       [001] d.s2.  1116.049076: workqueue_queue_work: work struct=000000003dfb565e function=wb_workfn workqueue=writeback req_cpu=64 cpu=-1
+          <idle>-0       [001] d.s2.  1116.049116: workqueue_activate_work: work struct 000000003dfb565e function=wb_workfn 
+          <idle>-0       [003] d.s2.  1116.050367: workqueue_queue_work: work struct=0000000032298e82 function=addrconf_verify_work workqueue=ipv6_addrconf req_cpu=64 cpu=-1
+          <idle>-0       [003] d.s2.  1116.050409: workqueue_activate_work: work struct 0000000032298e82 function=addrconf_verify_work 
+   kworker/u16:0-11      [002] .....  1116.051859: workqueue_execute_start: work struct 000000003dfb565e: function wb_workfn
+   kworker/u16:0-11      [002] .....  1116.053176: workqueue_execute_end: work struct 000000003dfb565e: function wb_workfn
+   kworker/u16:0-11      [002] .....  1116.053222: workqueue_execute_start: work struct 0000000032298e82: function addrconf_verify_work
+   kworker/u16:0-11      [002] .....  1116.053362: workqueue_execute_end: work struct 0000000032298e82: function addrconf_verify_work
+          <idle>-0       [003] d.s2.  1116.241585: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=3
+          <idle>-0       [003] d.s2.  1116.241624: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/3:2-66      [003] .....  1116.242298: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/3:2-66      [003] .....  1116.242859: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [000] d.s2.  1117.073068: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1117.073107: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1117.073712: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1117.073797: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [003] d.h4.  1117.640005: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1117.640031: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1117.640695: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] d..3.  1117.640999: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=1
+   kworker/u16:1-40      [001] d..3.  1117.641018: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:1-40      [001] .....  1117.641881: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/1:1-49      [001] .....  1117.642027: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/1:1-49      [001] .....  1117.642165: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1117.917954: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1117.917978: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1117.918666: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1117.918720: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1118.089443: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1118.089464: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1118.089822: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1118.089936: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1118.267994: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1118.268024: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1118.268994: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1118.269203: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [002] d.s2.  1118.288601: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=2
+          <idle>-0       [002] d.s2.  1118.288631: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/2:1-48      [002] .....  1118.289560: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/2:1-48      [002] .....  1118.290433: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h4.  1118.445097: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1118.445120: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1118.445864: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1118.446176: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1118.739499: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1118.739521: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1118.740339: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1118.740595: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1118.945981: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1118.946010: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1118.946695: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1118.947355: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1119.133355: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1119.133374: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1119.133789: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1119.133931: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1119.180085: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1119.180106: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1119.181124: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1119.181403: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1119.246154: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1119.246161: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1119.246318: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1119.246369: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1119.305268: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1119.305307: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+          <idle>-0       [000] dNs2.  1119.305474: workqueue_queue_work: work struct=00000000979295bb function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1119.305486: workqueue_activate_work: work struct 00000000979295bb function=neigh_managed_work 
+          <idle>-0       [000] dNs2.  1119.305501: workqueue_queue_work: work struct=0000000031299dc8 function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1119.305507: workqueue_activate_work: work struct 0000000031299dc8 function=neigh_managed_work 
+     kworker/0:0-8       [000] .....  1119.305866: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] d..1.  1119.305936: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+     kworker/0:0-8       [000] d..1.  1119.305945: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/0:0-8       [000] .....  1119.306140: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1119.306170: workqueue_execute_start: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1119.306207: workqueue_execute_end: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1119.306222: workqueue_execute_start: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1119.306238: workqueue_execute_end: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/3:2-66      [003] .....  1119.307689: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1119.307771: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [003] d.h4.  1119.549907: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1119.549917: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1119.550067: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1119.550120: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1119.708079: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1119.708089: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1119.708298: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1119.708348: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1119.803001: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1119.803029: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1119.803830: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1119.803987: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1119.877450: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1119.877463: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1119.877756: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1119.877904: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1119.926308: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1119.926327: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1119.926828: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1119.928310: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1119.989913: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1119.989934: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1119.990422: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1119.990587: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1120.038800: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1120.038806: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1120.038935: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1120.038977: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1120.074641: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1120.074648: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1120.074784: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1120.074831: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1120.126684: workqueue_queue_work: work struct=00000000736c6d78 function=delayed_vfree_work workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1120.126695: workqueue_activate_work: work struct 00000000736c6d78 function=delayed_vfree_work 
+     kworker/0:0-8       [000] .....  1120.126756: workqueue_execute_start: work struct 00000000736c6d78: function delayed_vfree_work
+     kworker/0:0-8       [000] .....  1120.126793: workqueue_execute_end: work struct 00000000736c6d78: function delayed_vfree_work
+          <idle>-0       [003] d.h4.  1120.313748: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1120.313763: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1120.313873: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1120.313920: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [001] d.s2.  1120.335934: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=1
+          <idle>-0       [001] d.s2.  1120.335941: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/1:1-49      [001] .....  1120.336062: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/1:1-49      [001] .....  1120.336268: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h4.  1120.520010: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1120.520022: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1120.520174: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1120.520225: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.s2.  1120.816956: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+          <idle>-0       [003] d.s2.  1120.816995: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/3:2-66      [003] .....  1120.818308: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1120.818369: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [001] d.h3.  1121.147341: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=1
+          <idle>-0       [001] d.h3.  1121.147385: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/1:1-49      [001] .....  1121.148090: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/1:1-49      [001] d..2.  1121.148200: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=1
+     kworker/1:1-49      [001] d..2.  1121.148213: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/1:1-49      [001] .....  1121.148235: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/1:1-49      [001] .....  1121.148256: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/1:1-49      [001] .....  1121.148283: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [000] d.s2.  1121.169118: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1121.169156: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+          <idle>-0       [002] d.s2.  1121.169177: workqueue_queue_work: work struct=000000003dfb565e function=wb_workfn workqueue=writeback req_cpu=64 cpu=-1
+          <idle>-0       [002] d.s2.  1121.169214: workqueue_activate_work: work struct 000000003dfb565e function=wb_workfn 
+     kworker/0:0-8       [000] .....  1121.169807: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] d..1.  1121.169882: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+     kworker/0:0-8       [000] d..1.  1121.169892: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+     kworker/0:0-8       [000] .....  1121.169968: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1121.169987: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1121.170041: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+   kworker/u16:1-40      [001] .....  1121.170756: workqueue_execute_start: work struct 000000003dfb565e: function wb_workfn
+   kworker/u16:1-40      [001] .....  1121.170975: workqueue_execute_end: work struct 000000003dfb565e: function wb_workfn
+          <idle>-0       [003] d.h4.  1121.454472: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1121.454497: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1121.455180: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] d..3.  1121.455266: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=1
+   kworker/u16:1-40      [001] d..3.  1121.455278: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:1-40      [001] .....  1121.455634: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/1:1-49      [001] .....  1121.457018: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/1:1-49      [001] .....  1121.457094: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1121.544034: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1121.544049: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1121.544500: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1121.544623: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1121.654863: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1121.654873: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1121.655089: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1121.655161: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1121.744882: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1121.744916: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1121.746094: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1121.746425: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1121.937029: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1121.937053: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1121.938320: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1121.938566: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1122.248918: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1122.248944: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1122.249505: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1122.249707: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.s2.  1122.384955: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=3
+          <idle>-0       [003] d.s2.  1122.384995: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/3:2-66      [003] .....  1122.386747: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/3:2-66      [003] .....  1122.388497: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h4.  1122.500242: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1122.500271: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1122.501273: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1122.502711: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1122.639481: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1122.639519: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1122.640271: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1122.640524: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1122.704813: workqueue_queue_work: work struct=00000000b43548d2 function=neigh_periodic_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1122.704852: workqueue_activate_work: work struct 00000000b43548d2 function=neigh_periodic_work 
+          <idle>-0       [000] dNs2.  1122.705479: workqueue_queue_work: work struct=000000003b5af5a1 function=neigh_periodic_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1122.705500: workqueue_activate_work: work struct 000000003b5af5a1 function=neigh_periodic_work 
+          <idle>-0       [000] dNs2.  1122.705523: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+          <idle>-0       [000] dNs2.  1122.705530: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+          <idle>-0       [000] dNs2.  1122.705539: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1122.705546: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1122.706002: workqueue_execute_start: work struct 00000000b43548d2: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1122.706075: workqueue_execute_end: work struct 00000000b43548d2: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1122.706099: workqueue_execute_start: work struct 000000003b5af5a1: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1122.706119: workqueue_execute_end: work struct 000000003b5af5a1: function neigh_periodic_work
+     kworker/0:0-8       [000] .....  1122.706131: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1122.706166: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1122.706177: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1122.706223: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [003] d.h4.  1123.069866: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1123.069876: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1123.070025: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1123.070081: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1123.105772: workqueue_queue_work: work struct=00000000736c6d78 function=delayed_vfree_work workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1123.105787: workqueue_activate_work: work struct 00000000736c6d78 function=delayed_vfree_work 
+     kworker/0:0-8       [000] .....  1123.105850: workqueue_execute_start: work struct 00000000736c6d78: function delayed_vfree_work
+     kworker/0:0-8       [000] .....  1123.105879: workqueue_execute_end: work struct 00000000736c6d78: function delayed_vfree_work
+          <idle>-0       [003] d.h4.  1123.564351: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1123.564367: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1123.564518: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1123.564568: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1123.722590: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1123.722600: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1123.722749: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1123.722804: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1123.840688: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1123.840713: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1123.841082: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] d..1.  1123.841149: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+     kworker/0:0-8       [000] d..1.  1123.841157: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+     kworker/0:0-8       [000] d..1.  1123.841201: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+     kworker/0:0-8       [000] d..1.  1123.841205: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/0:0-8       [000] .....  1123.841260: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1123.841272: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1123.841368: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/3:2-66      [003] .....  1123.841799: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1123.841871: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [003] d.h3.  1124.345082: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+          <idle>-0       [003] d.h3.  1124.345127: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/3:2-66      [003] .....  1124.346125: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] d..2.  1124.346233: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=3
+     kworker/3:2-66      [003] d..2.  1124.346246: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/3:2-66      [003] .....  1124.346266: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1124.346286: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/3:2-66      [003] .....  1124.346408: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [002] d.s2.  1124.432838: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=2
+          <idle>-0       [002] d.s2.  1124.432872: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/2:1-48      [002] .....  1124.433475: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/2:1-48      [002] .....  1124.434748: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.s2.  1124.849801: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+          <idle>-0       [003] d.s2.  1124.849839: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/3:2-66      [003] .....  1124.850672: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1124.850799: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [003] d.h4.  1125.247328: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1125.247361: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1125.248442: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] d..3.  1125.248535: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=1
+   kworker/u16:1-40      [001] d..3.  1125.248550: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:1-40      [001] .....  1125.248900: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/1:1-49      [001] .....  1125.249503: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/1:1-49      [001] .....  1125.249600: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1125.334826: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1125.334847: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1125.335215: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1125.335258: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1125.352432: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+          <idle>-0       [000] d.s2.  1125.352465: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+          <idle>-0       [000] dNs2.  1125.352888: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1125.352906: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+          <idle>-0       [000] dNs2.  1125.352945: workqueue_queue_work: work struct=0000000031299dc8 function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1125.352953: workqueue_activate_work: work struct 0000000031299dc8 function=neigh_managed_work 
+          <idle>-0       [000] dNs2.  1125.352963: workqueue_queue_work: work struct=00000000979295bb function=neigh_managed_work workqueue=events_power_efficient req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1125.352969: workqueue_activate_work: work struct 00000000979295bb function=neigh_managed_work 
+     kworker/0:0-8       [000] .....  1125.353628: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1125.353669: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1125.353687: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1125.353741: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1125.353750: workqueue_execute_start: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1125.353785: workqueue_execute_end: work struct 0000000031299dc8: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1125.353793: workqueue_execute_start: work struct 00000000979295bb: function neigh_managed_work
+     kworker/0:0-8       [000] .....  1125.353805: workqueue_execute_end: work struct 00000000979295bb: function neigh_managed_work
+          <idle>-0       [003] d.h4.  1125.556640: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1125.556668: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1125.557152: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1125.557451: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1125.639005: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1125.639036: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1125.640506: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1125.640869: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1125.778984: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1125.778994: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1125.779155: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1125.779205: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+            sync-251     [000] d..2.  1125.796241: workqueue_queue_work: work struct=000000003dfb565e function=wb_workfn workqueue=writeback req_cpu=64 cpu=-1
+            sync-251     [000] d..2.  1125.796250: workqueue_activate_work: work struct 000000003dfb565e function=wb_workfn 
+            sync-251     [000] d..2.  1125.796308: workqueue_queue_work: work struct=000000003dfb565e function=wb_workfn workqueue=writeback req_cpu=64 cpu=-1
+            sync-251     [000] d..2.  1125.796309: workqueue_activate_work: work struct 000000003dfb565e function=wb_workfn 
+   kworker/u16:1-40      [001] .....  1125.796332: workqueue_execute_start: work struct 000000003dfb565e: function wb_workfn
+   kworker/u16:1-40      [001] .....  1125.796881: workqueue_execute_end: work struct 000000003dfb565e: function wb_workfn
+            sync-251     [000] d..2.  1125.806050: workqueue_queue_work: work struct=000000005f040299 function=blk_mq_requeue_work workqueue=kblockd req_cpu=64 cpu=0
+            sync-251     [000] d..2.  1125.806054: workqueue_activate_work: work struct 000000005f040299 function=blk_mq_requeue_work 
+    kworker/0:1H-53      [000] .....  1125.806086: workqueue_execute_start: work struct 000000005f040299: function blk_mq_requeue_work
+    kworker/0:1H-53      [000] .....  1125.806226: blk_mq_requeue_work+0x4/0x1a0 <-process_one_work+0x168/0x390
+    kworker/0:1H-53      [000] .....  1125.806571: <stack trace>
+ => [FTRACE TRAMPOLINE]
+ => blk_mq_requeue_work+0x9/0x1a0
+ => process_one_work+0x168/0x390
+ => worker_thread+0x298/0x3b0
+ => kthread+0xf7/0x1f0
+ => ret_from_fork+0x34/0x50
+ => ret_from_fork_asm+0x1a/0x30
+    kworker/0:1H-53      [000] .....  1125.806845: workqueue_execute_end: work struct 000000005f040299: function blk_mq_requeue_work
+          <idle>-0       [001] d.s2.  1125.824741: workqueue_queue_work: work struct=000000008b5ec626 function=delayed_vfree_work workqueue=events req_cpu=64 cpu=1
+          <idle>-0       [001] d.s2.  1125.824751: workqueue_activate_work: work struct 000000008b5ec626 function=delayed_vfree_work 
+     kworker/1:1-49      [001] .....  1125.824801: workqueue_execute_start: work struct 000000008b5ec626: function delayed_vfree_work
+     kworker/1:1-49      [001] .....  1125.824826: workqueue_execute_end: work struct 000000008b5ec626: function delayed_vfree_work
+          <idle>-0       [002] d.s2.  1126.009427: workqueue_queue_work: work struct=00000000cbe7435f function=wb_update_bandwidth_workfn workqueue=writeback req_cpu=64 cpu=-1
+          <idle>-0       [002] d.s2.  1126.009467: workqueue_activate_work: work struct 00000000cbe7435f function=wb_update_bandwidth_workfn 
+   kworker/u16:1-40      [001] .....  1126.010469: workqueue_execute_start: work struct 00000000cbe7435f: function wb_update_bandwidth_workfn
+   kworker/u16:1-40      [001] .....  1126.010513: workqueue_execute_end: work struct 00000000cbe7435f: function wb_update_bandwidth_workfn
+          <idle>-0       [003] d.h4.  1126.097678: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1126.097693: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1126.097847: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1126.097913: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1126.258217: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1126.258226: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1126.258381: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1126.258430: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.s2.  1126.481127: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=3
+          <idle>-0       [003] d.s2.  1126.481171: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/3:2-66      [003] .....  1126.481903: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/3:2-66      [003] .....  1126.483255: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [001] d.h3.  1126.884476: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=1
+          <idle>-0       [001] d.h3.  1126.884494: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/1:1-49      [001] .....  1126.884877: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/1:1-49      [001] d..2.  1126.884925: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=1
+     kworker/1:1-49      [001] d..2.  1126.884929: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/1:1-49      [001] .....  1126.884935: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/1:1-49      [001] .....  1126.884942: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/1:1-49      [001] .....  1126.884949: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1127.038511: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1127.038538: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1127.039154: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] d..3.  1127.039214: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=1
+   kworker/u16:1-40      [001] d..3.  1127.039225: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:1-40      [001] .....  1127.039464: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/1:1-49      [001] .....  1127.039577: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/1:1-49      [001] .....  1127.040492: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1127.140351: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1127.140371: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1127.140883: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1127.141049: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1127.198758: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1127.198785: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1127.199442: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1127.199689: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1127.237185: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1127.237209: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1127.238001: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1127.238163: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1127.307174: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1127.307194: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1127.308516: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1127.312316: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1127.339457: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1127.339464: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1127.339591: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1127.339724: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+              sh-252     [000] d.s1.  1127.341769: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+              sh-252     [000] d.s1.  1127.341779: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1127.341860: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] d..1.  1127.341874: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+     kworker/0:0-8       [000] d..1.  1127.341875: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+     kworker/0:0-8       [000] d..1.  1127.341880: workqueue_queue_work: work struct=00000000449c4f2e function=vmstat_update workqueue=mm_percpu_wq req_cpu=1 cpu=1
+     kworker/0:0-8       [000] d..1.  1127.341881: workqueue_activate_work: work struct 00000000449c4f2e function=vmstat_update 
+     kworker/0:0-8       [000] d..1.  1127.341907: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+     kworker/0:0-8       [000] d..1.  1127.341909: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/0:0-8       [000] .....  1127.341932: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1127.341936: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1127.341947: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/1:1-49      [001] .....  1127.341969: workqueue_execute_start: work struct 00000000449c4f2e: function vmstat_update
+     kworker/1:1-49      [001] .....  1127.341985: workqueue_execute_end: work struct 00000000449c4f2e: function vmstat_update
+     kworker/3:2-66      [003] .....  1127.342068: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1127.342085: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [000] d.s2.  1127.387703: workqueue_queue_work: work struct=00000000736c6d78 function=delayed_vfree_work workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1127.387713: workqueue_activate_work: work struct 00000000736c6d78 function=delayed_vfree_work 
+     kworker/0:0-8       [000] .....  1127.387760: workqueue_execute_start: work struct 00000000736c6d78: function delayed_vfree_work
+     kworker/0:0-8       [000] .....  1127.387782: workqueue_execute_end: work struct 00000000736c6d78: function delayed_vfree_work
+          <idle>-0       [003] d.h4.  1127.596715: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1127.596728: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1127.596877: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1127.596932: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1127.771904: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1127.771913: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1127.772069: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1127.772120: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1128.213458: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1128.213499: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1128.214554: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1128.215728: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.s2.  1128.337126: workqueue_queue_work: work struct=000000003a3bd120 function=crng_reseed workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.s2.  1128.337150: workqueue_activate_work: work struct 000000003a3bd120 function=crng_reseed 
+   kworker/u16:1-40      [001] .....  1128.338345: workqueue_execute_start: work struct 000000003a3bd120: function crng_reseed
+   kworker/u16:1-40      [001] .....  1128.338451: workqueue_execute_end: work struct 000000003a3bd120: function crng_reseed
+          <idle>-0       [003] d.h4.  1128.403932: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1128.403949: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1128.404543: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1128.404719: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] d.h4.  1128.526063: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1128.526097: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1128.527093: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1128.527268: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [003] dNs2.  1128.530101: workqueue_queue_work: work struct=0000000099479efe function=e1000_watchdog workqueue=events req_cpu=64 cpu=3
+          <idle>-0       [003] dNs2.  1128.530126: workqueue_activate_work: work struct 0000000099479efe function=e1000_watchdog 
+     kworker/3:2-66      [003] .....  1128.531378: workqueue_execute_start: work struct 0000000099479efe: function e1000_watchdog
+     kworker/3:2-66      [003] .....  1128.531609: workqueue_execute_end: work struct 0000000099479efe: function e1000_watchdog
+          <idle>-0       [003] d.h4.  1128.680868: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1128.680895: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] d.s2.  1128.682173: workqueue_queue_work: work struct=00000000449c4f2e function=vmstat_update workqueue=mm_percpu_wq req_cpu=1 cpu=1
+   kworker/u16:1-40      [001] d.s2.  1128.682192: workqueue_activate_work: work struct 00000000449c4f2e function=vmstat_update 
+   kworker/u16:1-40      [001] .....  1128.682341: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1128.682493: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/1:1-49      [001] .....  1128.682579: workqueue_execute_start: work struct 00000000449c4f2e: function vmstat_update
+     kworker/1:1-49      [001] .....  1128.682606: workqueue_execute_end: work struct 00000000449c4f2e: function vmstat_update
+              sh-147     [003] d.s1.  1128.683984: workqueue_queue_work: work struct=00000000e0abf2d7 function=vmstat_update workqueue=mm_percpu_wq req_cpu=3 cpu=3
+              sh-147     [003] d.s1.  1128.683998: workqueue_activate_work: work struct 00000000e0abf2d7 function=vmstat_update 
+     kworker/3:2-66      [003] .....  1128.684162: workqueue_execute_start: work struct 00000000e0abf2d7: function vmstat_update
+     kworker/3:2-66      [003] .....  1128.684185: workqueue_execute_end: work struct 00000000e0abf2d7: function vmstat_update
+          <idle>-0       [003] d.h4.  1128.857181: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1128.857191: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1128.857389: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1128.857433: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+          <idle>-0       [000] d.s2.  1128.888867: workqueue_queue_work: work struct=00000000f9ea68ae function=vmstat_update workqueue=mm_percpu_wq req_cpu=0 cpu=0
+          <idle>-0       [000] d.s2.  1128.888896: workqueue_activate_work: work struct 00000000f9ea68ae function=vmstat_update 
+          <idle>-0       [000] dNs2.  1128.889035: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] dNs2.  1128.889046: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1128.889618: workqueue_execute_start: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1128.889671: workqueue_execute_end: work struct 00000000f9ea68ae: function vmstat_update
+     kworker/0:0-8       [000] .....  1128.889689: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1128.889783: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [001] d.h3.  1129.484411: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=1
+          <idle>-0       [001] d.h3.  1129.484451: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+     kworker/1:1-49      [001] .....  1129.485096: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/1:1-49      [001] d..2.  1129.485183: workqueue_queue_work: work struct=000000003029b18a function=pm_runtime_work workqueue=pm req_cpu=64 cpu=1
+     kworker/1:1-49      [001] d..2.  1129.485196: workqueue_activate_work: work struct 000000003029b18a function=pm_runtime_work 
+     kworker/1:1-49      [001] .....  1129.485216: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/1:1-49      [001] .....  1129.485236: workqueue_execute_start: work struct 000000003029b18a: function pm_runtime_work
+     kworker/1:1-49      [001] .....  1129.485262: workqueue_execute_end: work struct 000000003029b18a: function pm_runtime_work
+          <idle>-0       [003] d.h4.  1129.795605: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1129.795642: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1129.796973: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] d..3.  1129.797077: workqueue_queue_work: work struct=000000008f8ae094 function=pm_runtime_work workqueue=pm req_cpu=64 cpu=1
+   kworker/u16:1-40      [001] d..3.  1129.797096: workqueue_activate_work: work struct 000000008f8ae094 function=pm_runtime_work 
+   kworker/u16:1-40      [001] .....  1129.798121: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
+     kworker/1:1-49      [001] .....  1129.798197: workqueue_execute_start: work struct 000000008f8ae094: function pm_runtime_work
+     kworker/1:1-49      [001] .....  1129.798259: workqueue_execute_end: work struct 000000008f8ae094: function pm_runtime_work
+          <idle>-0       [000] d.s2.  1129.898335: workqueue_queue_work: work struct=00000000bc05cd92 function=vmstat_shepherd workqueue=events req_cpu=64 cpu=0
+          <idle>-0       [000] d.s2.  1129.898357: workqueue_activate_work: work struct 00000000bc05cd92 function=vmstat_shepherd 
+     kworker/0:0-8       [000] .....  1129.899118: workqueue_execute_start: work struct 00000000bc05cd92: function vmstat_shepherd
+     kworker/0:0-8       [000] .....  1129.899194: workqueue_execute_end: work struct 00000000bc05cd92: function vmstat_shepherd
+          <idle>-0       [003] d.h4.  1130.082224: workqueue_queue_work: work struct=0000000079593aa0 function=flush_to_ldisc workqueue=events_unbound req_cpu=64 cpu=-1
+          <idle>-0       [003] d.h4.  1130.082233: workqueue_activate_work: work struct 0000000079593aa0 function=flush_to_ldisc 
+   kworker/u16:1-40      [001] .....  1130.082397: workqueue_execute_start: work struct 0000000079593aa0: function flush_to_ldisc
+   kworker/u16:1-40      [001] .....  1130.082451: workqueue_execute_end: work struct 0000000079593aa0: function flush_to_ldisc
